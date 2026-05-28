@@ -97,4 +97,53 @@
       }
     });
   }
+
+  const paperModal = document.querySelector("[data-paper-modal]");
+  const paperTriggers = [...document.querySelectorAll("[data-paper-title]")];
+
+  if (paperModal && paperTriggers.length > 0) {
+    const modalTitle = paperModal.querySelector("[data-paper-modal-title]");
+    const modalEnglish = paperModal.querySelector("[data-paper-modal-english]");
+    const modalSummary = paperModal.querySelector("[data-paper-modal-summary]");
+    const modalConference = paperModal.querySelector("[data-paper-conference]");
+    const modalLink = paperModal.querySelector("[data-paper-modal-link]");
+    const closeButton = paperModal.querySelector("[data-paper-close]");
+    let lastFocused = null;
+
+    const closeModal = () => {
+      paperModal.hidden = true;
+      document.body.classList.remove("modal-open");
+      if (lastFocused) lastFocused.focus();
+    };
+
+    const openModal = (trigger) => {
+      const conference = trigger.dataset.paperConference || "학회";
+      lastFocused = trigger;
+
+      modalTitle.textContent = trigger.dataset.paperTitle || "";
+      modalEnglish.textContent = trigger.dataset.paperEnglish || "";
+      modalSummary.textContent = trigger.dataset.paperSummary || "";
+      modalConference.textContent = conference;
+      modalLink.href = trigger.dataset.paperLink || "#";
+      modalLink.textContent = `${conference} 학회 링크 열기`;
+
+      paperModal.hidden = false;
+      document.body.classList.add("modal-open");
+      closeButton.focus();
+    };
+
+    paperTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openModal(trigger));
+    });
+
+    closeButton.addEventListener("click", closeModal);
+
+    paperModal.addEventListener("click", (event) => {
+      if (event.target === paperModal) closeModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !paperModal.hidden) closeModal();
+    });
+  }
 })();
