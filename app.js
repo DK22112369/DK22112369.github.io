@@ -100,6 +100,7 @@
 
   const paperModal = document.querySelector("[data-paper-modal]");
   const paperTriggers = [...document.querySelectorAll("[data-paper-title]")];
+  const paperViewerModal = document.querySelector("[data-paper-viewer-modal]");
 
   if (paperModal && paperTriggers.length > 0) {
     const modalTitle = paperModal.querySelector("[data-paper-modal-title]");
@@ -107,8 +108,14 @@
     const modalSummary = paperModal.querySelector("[data-paper-modal-summary]");
     const modalConference = paperModal.querySelector("[data-paper-conference]");
     const modalLink = paperModal.querySelector("[data-paper-modal-link]");
+    const viewButton = paperModal.querySelector("[data-paper-view]");
     const closeButton = paperModal.querySelector("[data-paper-close]");
+    const viewerTitle = paperViewerModal?.querySelector("[data-paper-viewer-title]");
+    const viewerFrame = paperViewerModal?.querySelector("[data-paper-frame]");
+    const viewerCloseButton = paperViewerModal?.querySelector("[data-paper-viewer-close]");
     let lastFocused = null;
+    let selectedPaperPdf = "";
+    let selectedPaperTitle = "";
 
     const closeModal = () => {
       paperModal.hidden = true;
@@ -116,9 +123,33 @@
       if (lastFocused) lastFocused.focus();
     };
 
+    const closeViewerModal = () => {
+      if (!paperViewerModal) return;
+      paperViewerModal.hidden = true;
+      if (viewerFrame) viewerFrame.removeAttribute("src");
+      if (!paperModal.hidden) {
+        document.body.classList.add("modal-open");
+        if (viewButton && !viewButton.hidden) viewButton.focus();
+        return;
+      }
+      document.body.classList.remove("modal-open");
+    };
+
+    const openViewerModal = () => {
+      if (!paperViewerModal || !viewerFrame || !selectedPaperPdf) return;
+      const pdfUrl = `${selectedPaperPdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
+      if (viewerTitle) viewerTitle.textContent = selectedPaperTitle || "논문 보기";
+      viewerFrame.src = pdfUrl;
+      paperViewerModal.hidden = false;
+      document.body.classList.add("modal-open");
+      if (viewerCloseButton) viewerCloseButton.focus();
+    };
+
     const openModal = (trigger) => {
       const conference = trigger.dataset.paperConference || "학회";
       lastFocused = trigger;
+      selectedPaperPdf = trigger.dataset.paperPdf || "";
+      selectedPaperTitle = trigger.dataset.paperTitle || "";
 
       modalTitle.textContent = trigger.dataset.paperTitle || "";
       modalEnglish.textContent = trigger.dataset.paperEnglish || "";
@@ -126,6 +157,9 @@
       modalConference.textContent = conference;
       modalLink.href = trigger.dataset.paperLink || "#";
       modalLink.textContent = `${conference} 학회 링크 열기`;
+      if (viewButton) {
+        viewButton.hidden = !selectedPaperPdf;
+      }
 
       paperModal.hidden = false;
       document.body.classList.add("modal-open");
@@ -137,13 +171,29 @@
     });
 
     closeButton.addEventListener("click", closeModal);
+    if (viewButton) {
+      viewButton.addEventListener("click", openViewerModal);
+    }
+    if (viewerCloseButton) {
+      viewerCloseButton.addEventListener("click", closeViewerModal);
+    }
 
     paperModal.addEventListener("click", (event) => {
       if (event.target === paperModal) closeModal();
     });
+    if (paperViewerModal) {
+      paperViewerModal.addEventListener("click", (event) => {
+        if (event.target === paperViewerModal) closeViewerModal();
+      });
+    }
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !paperModal.hidden) closeModal();
+      if (event.key !== "Escape") return;
+      if (paperViewerModal && !paperViewerModal.hidden) {
+        closeViewerModal();
+        return;
+      }
+      if (!paperModal.hidden) closeModal();
     });
   }
 
