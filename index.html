@@ -10,14 +10,35 @@
     <meta name="referrer" content="no-referrer">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
     <meta
       name="description"
       content="김대근 로봇공학전공·자동차부품혁신전공 취업 포트폴리오. 실제 공장 로봇 제어, AMR 정밀 위치 추종, SLAM, 안전 감지, 광통신 환경 개선 성과 중심."
     >
+    <link rel="canonical" href="https://dk22112369.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="김대근 | Automotive Safety & Robotics Portfolio">
+    <meta
+      property="og:description"
+      content="AMR 정밀 위치 추종, SLAM, 공장 안전 감지, 차량 안전 제어를 실험과 기업과제로 검증한 로봇공학 포트폴리오."
+    >
+    <meta property="og:url" content="https://dk22112369.github.io/">
+    <meta property="og:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Daekeun Kim robotics and automotive safety portfolio preview">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="김대근 | Automotive Safety & Robotics Portfolio">
+    <meta
+      name="twitter:description"
+      content="공장 적용형 로봇 제어와 자동차 안전 시스템 중심의 취업 포트폴리오."
+    >
+    <meta name="twitter:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260529i">
-    <script src="app.js?v=20260529i" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260529j">
+    <script src="app.js?v=20260529j" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 이동</a>
@@ -67,6 +88,10 @@
           <div class="hero-actions" aria-label="주요 동작">
             <a class="button button-primary" href="#results">연구 성과 보기</a>
             <button class="button button-secondary" type="button" data-print>요약 인쇄</button>
+          </div>
+          <div class="hero-contact" aria-label="이메일 연락처">
+            <a href="mailto:22112369@yu.ac.kr">22112369@yu.ac.kr</a>
+            <button type="button" data-copy-email data-email="22112369@yu.ac.kr">복사</button>
           </div>
           <ul class="impact-strip" aria-label="핵심 지표">
             <li>
@@ -324,7 +349,7 @@
                     data-paper-conference="KICS 2026"
                     data-paper-link="https://conf.kics.or.kr/2026s"
                     data-paper-pdf="assets/papers/kics-2026-camera-psd-analysis.pdf"
-                    data-paper-summary="카메라 기반 마커 인식으로 대략 위치를 잡고 PSD 센서로 정밀 위치를 보정하는 하이브리드 위치 추정 연구입니다. 로봇이 공장 내 목표 지점에 안정적으로 접근하고 정밀 정렬하는 문제를 다룹니다."
+                    data-paper-summary="카메라 기반 광역 탐색과 PSD 기반 정밀 추종을 결합한 하이브리드 측위 연구입니다. 모바일 로봇에 부착된 ArUco 마커와 레트로리플렉터를 활용하고, 2축 모터·레이저·PSD 센서로 로봇 이동 중 지속적인 타겟 추종 가능성을 검증했습니다."
                   >
                     <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
                     <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
@@ -340,7 +365,7 @@
                     data-paper-conference="ICROS 2026"
                     data-paper-link="https://2026.icros.org/"
                     data-paper-pdf="assets/papers/icros-2026-apriltag-distance-logging.pdf"
-                    data-paper-summary="단안 RGB 카메라와 AprilTag를 이용해 상대 거리를 추정하고, 오도메트리 데이터와 동기화해 CSV 기반으로 분석한 연구입니다. 모바일 로봇 실험에서 재현 가능한 데이터 로깅 체계를 만드는 데 초점을 두었습니다."
+                    data-paper-summary="LIMO Pro 전방 단안 RGB 카메라와 AprilTag를 이용해 상대 거리를 추정하고, odometry와 동기화한 CSV 로그로 접근·정지 제어 성능을 분석한 연구입니다. 정지 상태 144 frame 검출률 100.00%, 주행 중 125 frame 중 54 frame 검출 결과를 기반으로 저비용 단안 카메라 구성의 단거리 인지 가능성을 검증했습니다."
                   >
                     <span class="paper-korean">차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험</span>
                     <strong>AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform</strong>
@@ -372,7 +397,7 @@
                     data-paper-conference="KICS 2026"
                     data-paper-link="https://conf.kics.or.kr/2026s"
                     data-paper-pdf="assets/papers/kics-2026-apriltag-slam-fsk-occ.pdf"
-                    data-paper-summary="AprilTag 기반 SLAM 안정화와 저속 FSK-OCC 통신을 결합해 자율 로봇의 위치와 상태를 전송하는 연구입니다. 공장 환경에서 로봇 상태를 시각 신호로 공유하는 응용 가능성을 담고 있습니다."
+                    data-paper-summary="AprilTag, odometry, gmapping SLAM 기반 위치 추정과 저속 FSK-OCC를 결합해 자율주행 로봇의 위치·상태를 외부로 송신하는 연구입니다. OA-ADS로 AprilTag 거리값 불안정을 보완하고, Lite3 LED의 2 Hz, 8 Hz, 11 Hz OCC 신호를 100% 복호해 공장 로봇 상태 전달 가능성을 검증했습니다."
                   >
                     <span class="paper-korean">AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템</span>
                     <strong>Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC</strong>
@@ -404,7 +429,7 @@
                     data-paper-conference="ICROS 2026"
                     data-paper-link="https://2026.icros.org/"
                     data-paper-pdf="assets/papers/icros-2026-admittance-control.pdf"
-                    data-paper-summary="외부 힘 센서를 최소화한 환경에서 Dynamixel AX-12A 내부 부하 피드백을 활용해 순응 제어를 구현한 연구입니다. 로봇 액추에이터의 하드웨어 제약 안에서 접촉 대응성을 높이는 데 초점을 둡니다."
+                    data-paper-summary="Dynamixel AX-12A의 Present Load 레지스터를 간접 피드백으로 사용해 별도 힘/토크 센서 없이 어드미턴스 기반 순응 제어를 구현한 연구입니다. deadband, 저역통과 필터, 가상 질량-댐퍼-스프링 모델을 적용해 외란 방향으로 목표 위치가 적응적으로 이동하고 안정적으로 복귀하는 동작을 확인했습니다."
                   >
                     <span class="paper-korean">센서 최소화 환경에서 로봇 액추에이터의 내장 로드 피드백을 이용한 어드미턴스 기반 순응 제어 구현</span>
                     <strong>Implementation of Admittance-Based Compliant Control Using Internal Load Feedback from a Robotic Actuator in a Sensor-Minimized Environment</strong>

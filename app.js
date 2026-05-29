@@ -76,6 +76,26 @@
     requestAnimationFrame(scrollToHash);
   });
 
+  const copyEmailButton = document.querySelector("[data-copy-email]");
+  if (copyEmailButton) {
+    const originalText = copyEmailButton.textContent;
+    copyEmailButton.addEventListener("click", async () => {
+      const email = copyEmailButton.dataset.email || "";
+      if (!email) return;
+
+      try {
+        await navigator.clipboard.writeText(email);
+        copyEmailButton.textContent = "복사됨";
+      } catch {
+        copyEmailButton.textContent = email;
+      }
+
+      window.setTimeout(() => {
+        copyEmailButton.textContent = originalText;
+      }, 1800);
+    });
+  }
+
   const paperModal = document.querySelector("[data-paper-modal]");
   const paperTriggers = [...document.querySelectorAll("[data-paper-title]")];
   const paperViewerModal = document.querySelector("[data-paper-viewer-modal]");
