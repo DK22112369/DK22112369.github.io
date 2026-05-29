@@ -650,6 +650,23 @@ h4 {
   margin-bottom: 8px;
 }
 
+.submitted-papers {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.submitted-papers h4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.submitted-paper-list {
+  margin-top: 4px;
+}
+
 .paper-list li,
 .award-list li,
 .license-list li {
