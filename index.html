@@ -8,14 +8,16 @@
       content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
     >
     <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="color-scheme" content="light">
     <meta
       name="description"
       content="김대근 로봇공학전공·자동차부품혁신전공 취업 포트폴리오. 실제 공장 로봇 제어, AMR 정밀 위치 추종, SLAM, 안전 감지, 광통신 환경 개선 성과 중심."
     >
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260529h">
-    <script src="app.js?v=20260529h" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260529i">
+    <script src="app.js?v=20260529i" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 이동</a>
@@ -40,7 +42,6 @@
         <a href="#overview">개요</a>
         <a href="#results">성과</a>
         <a href="#research">연구</a>
-        <a href="#contact">연락</a>
       </nav>
     </header>
 
@@ -64,25 +65,33 @@
             <li>2027년 2월 졸업 예정</li>
           </ul>
           <div class="hero-actions" aria-label="주요 동작">
-            <a class="button button-primary" href="#research">연구 성과 보기</a>
+            <a class="button button-primary" href="#results">연구 성과 보기</a>
             <button class="button button-secondary" type="button" data-print>요약 인쇄</button>
           </div>
           <ul class="impact-strip" aria-label="핵심 지표">
             <li>
-              <strong>4건</strong>
-              <span>기업과제</span>
+              <a class="impact-link" href="#enterprise-title">
+                <strong>4건</strong>
+                <span>기업과제</span>
+              </a>
             </li>
             <li>
-              <strong>17건</strong>
-              <span>수상·선발 이력</span>
+              <a class="impact-link" href="#awards-title">
+                <strong>17건</strong>
+                <span>수상·선발 이력</span>
+              </a>
             </li>
             <li>
-              <strong>7건</strong>
-              <span>국내 논문</span>
+              <a class="impact-link" href="#papers-title">
+                <strong>7건</strong>
+                <span>국내 논문</span>
+              </a>
             </li>
             <li>
-              <strong>2건</strong>
-              <span>해외 저널 투고논문</span>
+              <a class="impact-link" href="#submitted-papers-title">
+                <strong>2건</strong>
+                <span>해외 저널 투고논문</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -294,15 +303,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="실내 모바일 로봇을 위한 Camera-PSD 융합 기반 하이브리드 정밀 위치 추정"
-                    data-paper-english="Camera-PSD Fusion-Based Hybrid Precision Positioning for Indoor Mobile Robots"
+                    data-paper-title="카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석"
+                    data-paper-english="Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion"
                     data-paper-conference="JCCI 2026"
                     data-paper-link="https://jcci.kr/sites/jcci2026/program"
                     data-paper-pdf="assets/papers/jcci-2026-camera-psd-positioning.pdf"
                     data-paper-summary="실내 모바일 로봇의 위치 정밀도를 높이기 위해 카메라와 PSD 센서를 융합한 연구입니다. 평균 3D 유클리드 오차 2.9464 mm 수준의 실험 결과를 통해 공장 적용형 정밀 위치 추종 가능성을 보여줍니다."
                   >
-                    <span class="paper-korean">실내 모바일 로봇을 위한 Camera-PSD 융합 기반 하이브리드 정밀 위치 추정</span>
-                    <strong>Camera-PSD Fusion-Based Hybrid Precision Positioning for Indoor Mobile Robots</strong>
+                    <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
+                    <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
                     <span class="paper-meta">JCCI 2026 · 2.9464 mm mean 3D Euclidean error</span>
                   </button>
                 </li>
@@ -310,15 +319,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="Camera-PSD 융합 기반 하이브리드 정밀 위치 추정 분석"
-                    data-paper-english="Analysis of Hybrid Precision Positioning Based on Camera-PSD Fusion"
+                    data-paper-title="카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석"
+                    data-paper-english="Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion"
                     data-paper-conference="KICS 2026"
                     data-paper-link="https://conf.kics.or.kr/2026s"
                     data-paper-pdf="assets/papers/kics-2026-camera-psd-analysis.pdf"
                     data-paper-summary="카메라 기반 마커 인식으로 대략 위치를 잡고 PSD 센서로 정밀 위치를 보정하는 하이브리드 위치 추정 연구입니다. 로봇이 공장 내 목표 지점에 안정적으로 접근하고 정밀 정렬하는 문제를 다룹니다."
                   >
-                    <span class="paper-korean">Camera-PSD 융합 기반 하이브리드 정밀 위치 추정 분석</span>
-                    <strong>Analysis of Hybrid Precision Positioning Based on Camera-PSD Fusion</strong>
+                    <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
+                    <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
                     <span class="paper-meta">KICS 2026 · ArUco coarse tracking, PSD fine tracking</span>
                   </button>
                 </li>
@@ -326,15 +335,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="AprilTag 상대 거리 추정 및 오도메트리 동기화 로깅"
-                    data-paper-english="AprilTag Relative Distance Estimation and Odometry-Synchronized Logging"
+                    data-paper-title="차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험"
+                    data-paper-english="AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform"
                     data-paper-conference="ICROS 2026"
                     data-paper-link="https://2026.icros.org/"
                     data-paper-pdf="assets/papers/icros-2026-apriltag-distance-logging.pdf"
                     data-paper-summary="단안 RGB 카메라와 AprilTag를 이용해 상대 거리를 추정하고, 오도메트리 데이터와 동기화해 CSV 기반으로 분석한 연구입니다. 모바일 로봇 실험에서 재현 가능한 데이터 로깅 체계를 만드는 데 초점을 두었습니다."
                   >
-                    <span class="paper-korean">AprilTag 상대 거리 추정 및 오도메트리 동기화 로깅</span>
-                    <strong>AprilTag Relative Distance Estimation and Odometry-Synchronized Logging</strong>
+                    <span class="paper-korean">차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험</span>
+                    <strong>AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform</strong>
                     <span class="paper-meta">ICROS 2026 · monocular RGB, ROS, CSV analysis</span>
                   </button>
                 </li>
@@ -342,15 +351,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="LIMO 및 ERP-42 플랫폼 기반 후미등 OCC 안전 제어 트리거"
-                    data-paper-english="Taillamp OCC Safety-Control Trigger on LIMO and ERP-42 Platforms"
+                    data-paper-title="AGV 및 자율주행 플랫폼 기반 FFT 후미등 OCC 주파수 인식을 이용한 차량 안전 제어 트리거 시스템"
+                    data-paper-english="Vehicle Safety Control Trigger System Using FFT-Based Taillamp OCC Frequency Recognition on LIMO and ERP-42 Platforms"
                     data-paper-conference="ICROS 2026"
                     data-paper-link="https://2026.icros.org/"
                     data-paper-pdf="assets/papers/icros-2026-occ-safety-trigger.pdf"
                     data-paper-summary="차량 후미등 점멸 신호를 카메라 기반 OCC로 인식하고, LIMO와 ERP-42 플랫폼에서 안전 제어 트리거로 연결한 연구입니다. 공장형 이동 로봇이 주변 차량·장비 신호를 해석해 제어 상태를 바꾸는 흐름과 맞닿아 있습니다."
                   >
-                    <span class="paper-korean">LIMO 및 ERP-42 플랫폼 기반 후미등 OCC 안전 제어 트리거</span>
-                    <strong>Taillamp OCC Safety-Control Trigger on LIMO and ERP-42 Platforms</strong>
+                    <span class="paper-korean">AGV 및 자율주행 플랫폼 기반 FFT 후미등 OCC 주파수 인식을 이용한 차량 안전 제어 트리거 시스템</span>
+                    <strong>Vehicle Safety Control Trigger System Using FFT-Based Taillamp OCC Frequency Recognition on LIMO and ERP-42 Platforms</strong>
                     <span class="paper-meta">ICROS 2026 · robot platform safety-control trigger, 2 Hz / 11 Hz FFT recognition</span>
                   </button>
                 </li>
@@ -358,15 +367,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="AprilTag-SLAM 안정화와 저속 FSK-OCC 상태 전송"
-                    data-paper-english="AprilTag-SLAM Stabilization and Low-Rate FSK-OCC Status Transmission"
+                    data-paper-title="AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템"
+                    data-paper-english="Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC"
                     data-paper-conference="KICS 2026"
                     data-paper-link="https://conf.kics.or.kr/2026s"
                     data-paper-pdf="assets/papers/kics-2026-apriltag-slam-fsk-occ.pdf"
                     data-paper-summary="AprilTag 기반 SLAM 안정화와 저속 FSK-OCC 통신을 결합해 자율 로봇의 위치와 상태를 전송하는 연구입니다. 공장 환경에서 로봇 상태를 시각 신호로 공유하는 응용 가능성을 담고 있습니다."
                   >
-                    <span class="paper-korean">AprilTag-SLAM 안정화와 저속 FSK-OCC 상태 전송</span>
-                    <strong>AprilTag-SLAM Stabilization and Low-Rate FSK-OCC Status Transmission</strong>
+                    <span class="paper-korean">AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템</span>
+                    <strong>Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC</strong>
                     <span class="paper-meta">KICS 2026 · autonomous robot position/status signal</span>
                   </button>
                 </li>
@@ -374,15 +383,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="FiGNN-Crash 기반 알람 예산형 자율주행 Fail-Safe 심각도 스크리닝"
-                    data-paper-english="Budgeted Fail-Safe Screening with FiGNN-Crash"
+                    data-paper-title="알람 예산 기반 자율주행 Fail-Safe 심각도 선별(스크리닝)을 위한 경량 FiGNN 모델 개발"
+                    data-paper-english="Development of a lightweight FiGNN model for autonomous driving fail-safe severity screening based on alarm budgets"
                     data-paper-conference="JCCI 2026"
                     data-paper-link="https://jcci.kr/sites/jcci2026/program"
                     data-paper-pdf="assets/papers/jcci-2026-fail-safe-screening.pdf"
                     data-paper-summary="자율주행 사고 심각도 스크리닝에서 제한된 알람 예산 안에 고위험 상황을 우선 탐지하는 연구입니다. 실시간 추론과 Sev4 재현율을 중심으로 fail-safe 판단 흐름을 구성했습니다."
                   >
-                    <span class="paper-korean">FiGNN-Crash 기반 알람 예산형 자율주행 Fail-Safe 심각도 스크리닝</span>
-                    <strong>Budgeted Fail-Safe Screening with FiGNN-Crash</strong>
+                    <span class="paper-korean">알람 예산 기반 자율주행 Fail-Safe 심각도 선별(스크리닝)을 위한 경량 FiGNN 모델 개발</span>
+                    <strong>Development of a lightweight FiGNN model for autonomous driving fail-safe severity screening based on alarm budgets</strong>
                     <span class="paper-meta">JCCI 2026 · Sev4 recall, alarm budget, real-time inference</span>
                   </button>
                 </li>
@@ -390,15 +399,15 @@
                   <button
                     class="paper-trigger"
                     type="button"
-                    data-paper-title="내부 부하 피드백 기반 어드미턴스 순응 제어"
-                    data-paper-english="Admittance-Based Compliant Control Using Internal Load Feedback"
+                    data-paper-title="센서 최소화 환경에서 로봇 액추에이터의 내장 로드 피드백을 이용한 어드미턴스 기반 순응 제어 구현"
+                    data-paper-english="Implementation of Admittance-Based Compliant Control Using Internal Load Feedback from a Robotic Actuator in a Sensor-Minimized Environment"
                     data-paper-conference="ICROS 2026"
                     data-paper-link="https://2026.icros.org/"
                     data-paper-pdf="assets/papers/icros-2026-admittance-control.pdf"
                     data-paper-summary="외부 힘 센서를 최소화한 환경에서 Dynamixel AX-12A 내부 부하 피드백을 활용해 순응 제어를 구현한 연구입니다. 로봇 액추에이터의 하드웨어 제약 안에서 접촉 대응성을 높이는 데 초점을 둡니다."
                   >
-                    <span class="paper-korean">내부 부하 피드백 기반 어드미턴스 순응 제어</span>
-                    <strong>Admittance-Based Compliant Control Using Internal Load Feedback</strong>
+                    <span class="paper-korean">센서 최소화 환경에서 로봇 액추에이터의 내장 로드 피드백을 이용한 어드미턴스 기반 순응 제어 구현</span>
+                    <strong>Implementation of Admittance-Based Compliant Control Using Internal Load Feedback from a Robotic Actuator in a Sensor-Minimized Environment</strong>
                     <span class="paper-meta">ICROS 2026 · Dynamixel AX-12A, sensor-minimized robotics</span>
                   </button>
                 </li>
@@ -637,7 +646,7 @@
           <div class="activity-grid">
             <article class="activity-card">
               <time datetime="2026">FIX 2026 예정</time>
-              <h3>FIX 2026 부스 참가 예정</h3>
+              <h3><a href="https://www.fixkorea.or.kr" target="_blank" rel="noopener noreferrer">FIX 2026 부스 참가 예정</a></h3>
               <p>
                 공장 적용형 로봇 제어와 안전 감지 시스템 성과를 부스 형태로 소개할 예정입니다.
                 AMR·사족보행 로봇·비전 기반 안전 감지 흐름을 실제 적용 관점에서 보여주는 방향으로 준비하고 있습니다.
@@ -646,7 +655,7 @@
 
             <article class="activity-card">
               <time datetime="2025">DIFA 2025</time>
-              <h3>한국자동차공학한림원 세션 차량안전시스템 발표</h3>
+              <h3><a href="https://www.difa.or.kr" target="_blank" rel="noopener noreferrer">한국자동차공학한림원 세션 차량안전시스템 발표</a></h3>
               <p>
                 DIFA 2025에서 한국자동차공학한림원 세션으로 참가해 차량안전시스템을 발표했습니다.
                 후미등 OCC, 공장 안전 감지, 로봇 플랫폼 적용 가능성을 자동차 안전 시스템 관점에서 설명했습니다.
@@ -656,26 +665,6 @@
         </div>
       </section>
 
-      <section id="contact" class="section contact section-anchor" aria-labelledby="contact-title">
-        <div class="section-shell contact-grid">
-          <div>
-            <p class="eyebrow">Secure Contact</p>
-            <h2 id="contact-title">공개 정보는 최소화하고, 검증 가능한 성과는 선명하게</h2>
-            <p>
-              공개 페이지에는 전화번호와 상세 주소를 제외했습니다. 채용 검토에 필요한 경우
-              이메일은 버튼 클릭 후 표시되며, GitHub는 새 창에서 안전 속성으로 열립니다.
-            </p>
-          </div>
-          <div class="contact-actions">
-            <button class="button button-primary" type="button" data-email-button>이메일 표시</button>
-            <a class="button button-secondary" href="https://github.com/DK22112369" target="_blank" rel="noopener noreferrer">GitHub 열기</a>
-            <p class="email-output" data-email-output hidden></p>
-            <p class="privacy-note">
-              이 사이트는 외부 스크립트, 외부 폰트, 분석 도구, 입력 폼을 사용하지 않습니다.
-            </p>
-          </div>
-        </div>
-      </section>
     </main>
 
     <div class="paper-modal" data-paper-modal hidden>

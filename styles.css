@@ -420,11 +420,33 @@ h4 {
 
 .impact-strip li {
   min-height: 104px;
-  padding: 18px;
+  padding: 0;
 }
 
 .impact-strip li + li {
   border-left: 1px solid var(--line-soft);
+}
+
+.impact-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 104px;
+  padding: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.impact-link:hover,
+.impact-link:focus-visible {
+  background: rgba(0, 113, 227, 0.06);
+  outline: none;
+}
+
+.impact-link:hover strong,
+.impact-link:focus-visible strong {
+  color: var(--blue);
 }
 
 .impact-strip strong {
@@ -895,6 +917,19 @@ h4 {
   color: var(--muted);
 }
 
+.activity-card a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.activity-card a:hover,
+.activity-card a:focus-visible {
+  color: var(--blue);
+  text-decoration: underline;
+  outline: none;
+}
+
 .contact {
   background: var(--dark);
   color: #fff;
@@ -1169,6 +1204,10 @@ body.modal-open {
 
   .impact-strip li {
     min-height: 104px;
+    padding: 0;
+  }
+
+  .impact-link {
     padding: 16px;
   }
 

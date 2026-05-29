@@ -76,28 +76,6 @@
     requestAnimationFrame(scrollToHash);
   });
 
-  const emailButton = document.querySelector("[data-email-button]");
-  const emailOutput = document.querySelector("[data-email-output]");
-
-  if (emailButton && emailOutput) {
-    emailButton.addEventListener("click", async () => {
-      const parts = ["22112369", "yu.ac.kr"];
-      const email = `${parts[0]}@${parts[1]}`;
-      emailOutput.hidden = false;
-      emailOutput.textContent = email;
-      emailButton.textContent = "이메일 표시됨";
-
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(email);
-          emailButton.textContent = "이메일 복사됨";
-        }
-      } catch {
-        emailButton.textContent = "이메일 표시됨";
-      }
-    });
-  }
-
   const paperModal = document.querySelector("[data-paper-modal]");
   const paperTriggers = [...document.querySelectorAll("[data-paper-title]")];
   const paperViewerModal = document.querySelector("[data-paper-viewer-modal]");
