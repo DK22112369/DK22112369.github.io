@@ -146,4 +146,52 @@
       if (event.key === "Escape" && !paperModal.hidden) closeModal();
     });
   }
+
+  const platformModal = document.querySelector("[data-platform-modal]");
+  const platformTriggers = [...document.querySelectorAll("[data-platform-title]")];
+
+  if (platformModal && platformTriggers.length > 0) {
+    const modalTitle = platformModal.querySelector("[data-platform-modal-title]");
+    const modalDetail = platformModal.querySelector("[data-platform-modal-detail]");
+    const modalSummary = platformModal.querySelector("[data-platform-modal-summary]");
+    const modalKind = platformModal.querySelector("[data-platform-modal-kind]");
+    const modalLink = platformModal.querySelector("[data-platform-modal-link]");
+    const closeButton = platformModal.querySelector("[data-platform-close]");
+    let lastFocused = null;
+
+    const closeModal = () => {
+      platformModal.hidden = true;
+      document.body.classList.remove("modal-open");
+      if (lastFocused) lastFocused.focus();
+    };
+
+    const openModal = (trigger) => {
+      lastFocused = trigger;
+
+      modalTitle.textContent = trigger.dataset.platformTitle || "";
+      modalDetail.textContent = trigger.dataset.platformDetail || "";
+      modalSummary.textContent = trigger.dataset.platformSummary || "";
+      modalKind.textContent = trigger.dataset.platformKind || "Platform";
+      modalLink.href = trigger.dataset.platformLink || "#";
+      modalLink.textContent = `${trigger.dataset.platformTitle || "플랫폼"} 사진·자료 링크 열기`;
+
+      platformModal.hidden = false;
+      document.body.classList.add("modal-open");
+      closeButton.focus();
+    };
+
+    platformTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openModal(trigger));
+    });
+
+    closeButton.addEventListener("click", closeModal);
+
+    platformModal.addEventListener("click", (event) => {
+      if (event.target === platformModal) closeModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !platformModal.hidden) closeModal();
+    });
+  }
 })();

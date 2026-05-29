@@ -736,6 +736,38 @@ h4 {
   color: var(--muted);
 }
 
+.platform-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.platform-trigger {
+  display: inline-flex;
+  align-items: center;
+  min-height: 31px;
+  padding: 0 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  background: rgba(0, 113, 227, 0.06);
+  color: #424245;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.platform-trigger:hover,
+.platform-trigger:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(0, 113, 227, 0.28);
+  background: rgba(0, 113, 227, 0.11);
+  color: var(--blue);
+  outline: none;
+}
+
 .timeline {
   display: grid;
   gap: 0;
