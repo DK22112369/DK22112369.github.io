@@ -41,6 +41,43 @@ img {
   max-width: 100%;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#overview {
+  order: 0;
+}
+
+#results {
+  order: 1;
+}
+
+.focus-band {
+  order: 2;
+}
+
+.enterprise {
+  order: 3;
+}
+
+section[aria-labelledby="timeline-title"] {
+  order: 4;
+}
+
+.public-activities {
+  order: 5;
+}
+
+#research {
+  order: 6;
+}
+
+#contact {
+  order: 7;
+}
+
 a {
   color: inherit;
 }
