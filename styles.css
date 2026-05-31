@@ -350,60 +350,42 @@ h4 {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.72) inset;
 }
 
+.profile-tags .profile-tag-action {
+  padding: 0;
+}
+
+.profile-tag-link,
+.profile-tag-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-tag-link:hover,
+.profile-tag-link:focus-visible,
+.profile-tag-button:hover,
+.profile-tag-button:focus-visible {
+  color: var(--blue);
+  outline: none;
+}
+
 .hero-actions,
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-}
-
-.hero-contact {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-  padding: 7px 8px 7px 14px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid var(--line-soft);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.hero-contact a {
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.hero-contact a:hover,
-.hero-contact a:focus-visible {
-  color: var(--blue);
-  outline: none;
-}
-
-.hero-contact button {
-  display: inline-grid;
-  place-items: center;
-  min-height: 30px;
-  padding: 0 11px;
-  border: 1px solid rgba(0, 113, 227, 0.22);
-  border-radius: 999px;
-  background: rgba(0, 113, 227, 0.08);
-  color: var(--blue);
-  font: inherit;
-  font-size: 12px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.hero-contact button:hover,
-.hero-contact button:focus-visible {
-  background: var(--blue);
-  color: #fff;
-  outline: none;
 }
 
 .button {
@@ -1240,7 +1222,6 @@ body.modal-open {
   .button-secondary,
   .profile-tags li,
   .impact-strip,
-  .hero-contact,
   .result-panel,
   .research-card,
   .activity-card {
@@ -1451,23 +1432,6 @@ body.modal-open {
     width: 100%;
   }
 
-  .hero-contact {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    border-radius: 8px;
-    padding: 12px;
-  }
-
-  .hero-contact a {
-    overflow-wrap: anywhere;
-  }
-
-  .hero-contact button {
-    width: 100%;
-    min-height: 34px;
-  }
-
   h1 {
     font-size: 34px;
   }
@@ -1530,7 +1494,6 @@ body.modal-open {
 @media print {
   .site-header,
   .hero-actions,
-  .hero-contact,
   .contact-actions,
   .paper-modal,
   .site-footer {

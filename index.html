@@ -37,8 +37,8 @@
     >
     <meta name="twitter:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260531c">
-    <script src="app.js?v=20260531c" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260531d">
+    <script src="app.js?v=20260531d" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 이동</a>
@@ -79,11 +79,24 @@
             <li>로봇공학전공</li>
             <li>자동차부품혁신전공 복수전공</li>
             <li>2027년 2월 졸업 예정</li>
+            <li class="profile-tag-action"><a class="profile-tag-link" href="mailto:22112369@yu.ac.kr">22112369@yu.ac.kr</a></li>
+            <li class="profile-tag-action">
+              <button
+                class="profile-tag-button"
+                type="button"
+                data-recommend-title="교수 추천서"
+                data-recommend-summary="교수 추천서는 서명과 개인정보가 포함될 수 있는 제출용 문서입니다. 원본 PDF를 전달받으면 이 창에서 바로 열람할 수 있도록 연결하겠습니다."
+              >교수 추천서</button>
+            </li>
+            <li class="profile-tag-action">
+              <button
+                class="profile-tag-button"
+                type="button"
+                data-recommend-title="학과 추천서"
+                data-recommend-summary="학과 추천서는 서명과 개인정보가 포함될 수 있는 제출용 문서입니다. 원본 PDF를 전달받으면 이 창에서 바로 열람할 수 있도록 연결하겠습니다."
+              >학과 추천서</button>
+            </li>
           </ul>
-          <div class="hero-contact" aria-label="이메일 연락처">
-            <a href="mailto:22112369@yu.ac.kr">22112369@yu.ac.kr</a>
-            <button type="button" data-copy-email data-email="22112369@yu.ac.kr">복사</button>
-          </div>
           <ul class="impact-strip" aria-label="핵심 지표">
             <li>
               <a class="impact-link" href="#enterprise-title">
@@ -721,6 +734,15 @@
         <p class="paper-modal__english" data-platform-modal-detail></p>
         <p id="platform-modal-summary" class="paper-modal__summary" data-platform-modal-summary></p>
         <a class="button button-primary paper-modal__link" href="#" target="_blank" rel="noopener noreferrer" data-platform-modal-link>사진·자료 링크 열기</a>
+      </div>
+    </div>
+
+    <div class="paper-modal recommendation-modal" data-recommend-modal hidden>
+      <div class="paper-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="recommend-modal-title" aria-describedby="recommend-modal-summary">
+        <button class="paper-modal__close" type="button" aria-label="추천서 닫기" data-recommend-close>×</button>
+        <p class="eyebrow">Recommendation</p>
+        <h2 id="recommend-modal-title" class="paper-modal__title" data-recommend-modal-title></h2>
+        <p id="recommend-modal-summary" class="paper-modal__summary" data-recommend-modal-summary></p>
       </div>
     </div>
 

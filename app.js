@@ -76,26 +76,6 @@
     requestAnimationFrame(scrollToHash);
   });
 
-  const copyEmailButton = document.querySelector("[data-copy-email]");
-  if (copyEmailButton) {
-    const originalText = copyEmailButton.textContent;
-    copyEmailButton.addEventListener("click", async () => {
-      const email = copyEmailButton.dataset.email || "";
-      if (!email) return;
-
-      try {
-        await navigator.clipboard.writeText(email);
-        copyEmailButton.textContent = "복사됨";
-      } catch {
-        copyEmailButton.textContent = email;
-      }
-
-      window.setTimeout(() => {
-        copyEmailButton.textContent = originalText;
-      }, 1800);
-    });
-  }
-
   const paperModal = document.querySelector("[data-paper-modal]");
   const paperTriggers = [...document.querySelectorAll("[data-paper-title]")];
   const paperViewerModal = document.querySelector("[data-paper-viewer-modal]");
@@ -240,6 +220,44 @@
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && !platformModal.hidden) closeModal();
+    });
+  }
+
+  const recommendModal = document.querySelector("[data-recommend-modal]");
+  const recommendTriggers = [...document.querySelectorAll("[data-recommend-title]")];
+
+  if (recommendModal && recommendTriggers.length > 0) {
+    const modalTitle = recommendModal.querySelector("[data-recommend-modal-title]");
+    const modalSummary = recommendModal.querySelector("[data-recommend-modal-summary]");
+    const closeButton = recommendModal.querySelector("[data-recommend-close]");
+    let lastFocused = null;
+
+    const closeModal = () => {
+      recommendModal.hidden = true;
+      document.body.classList.remove("modal-open");
+      if (lastFocused) lastFocused.focus();
+    };
+
+    const openModal = (trigger) => {
+      lastFocused = trigger;
+      modalTitle.textContent = trigger.dataset.recommendTitle || "";
+      modalSummary.textContent = trigger.dataset.recommendSummary || "";
+      recommendModal.hidden = false;
+      document.body.classList.add("modal-open");
+      closeButton.focus();
+    };
+
+    recommendTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openModal(trigger));
+    });
+
+    closeButton.addEventListener("click", closeModal);
+    recommendModal.addEventListener("click", (event) => {
+      if (event.target === recommendModal) closeModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !recommendModal.hidden) closeModal();
     });
   }
 })();
