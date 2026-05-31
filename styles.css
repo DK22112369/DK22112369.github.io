@@ -743,6 +743,23 @@ h4 {
   grid-column: 1 / -1;
 }
 
+.enterprise-panel {
+  background: var(--dark);
+  border-color: var(--dark-line);
+  color: #fff;
+  box-shadow: none;
+}
+
+.enterprise-panel h2,
+.enterprise-panel h3,
+.enterprise-panel h4 {
+  color: #fff;
+}
+
+.enterprise-panel .section-heading p:last-child {
+  color: #a1a1a6;
+}
+
 .result-panel h3,
 .award-groups h4 {
   display: flex;
