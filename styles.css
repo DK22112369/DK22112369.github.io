@@ -224,7 +224,9 @@ a {
 
 .hero {
   position: relative;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 252px;
+  gap: 44px;
   align-items: center;
   min-height: calc(88svh - 52px);
   overflow: visible;
@@ -250,21 +252,25 @@ a {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(1040px, 100%);
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 860px;
 }
 
 .hero-photo {
-  float: right;
+  justify-self: end;
   position: relative;
   z-index: 3;
+  grid-column: 2;
+  grid-row: 1;
   width: 252px;
   height: 324px;
-  margin: 0 0 28px 42px;
+  margin: 0;
   object-fit: cover;
   object-position: center top;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.16);
 }
 
 .eyebrow {
@@ -333,21 +339,22 @@ h4 {
 .profile-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: -2px 0 24px;
+  gap: 7px;
+  margin: 0 0 24px;
   padding: 0;
   list-style: none;
 }
 
 .profile-tags li {
-  padding: 8px 11px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--line-soft);
-  border-radius: 8px;
+  border-radius: 999px;
   color: var(--ink);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 650;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.72) inset;
+  backdrop-filter: blur(18px);
 }
 
 .profile-tags .profile-tag-action {
@@ -359,15 +366,15 @@ h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
-  padding: 0 11px;
+  min-height: 31px;
+  padding: 0 10px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 999px;
   background: transparent;
   color: inherit;
   font: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 650;
   text-decoration: none;
   cursor: pointer;
 }
@@ -1369,6 +1376,9 @@ body.modal-open {
 
   .hero {
     min-height: auto;
+    grid-template-columns: minmax(0, 1fr) 118px;
+    gap: 18px;
+    align-items: start;
     padding: 54px 24px 42px;
   }
 
@@ -1379,7 +1389,7 @@ body.modal-open {
   .hero-photo {
     width: 118px;
     height: 152px;
-    margin: 0 0 14px 18px;
+    margin: 0;
   }
 
   h1 {
@@ -1489,10 +1499,17 @@ body.modal-open {
   }
 
   .hero-photo {
-    float: none;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
     width: 104px;
     height: 134px;
     margin: 0 auto 18px;
+  }
+
+  .hero-content {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .impact-strip {
