@@ -631,6 +631,14 @@ h4 {
   color: #fff;
 }
 
+.enterprise-card-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 18px;
+  min-height: 54px;
+}
+
 .company-name {
   margin-bottom: 8px;
   color: #fff;
@@ -654,6 +662,61 @@ h4 {
 
 .company-name span {
   color: #a1a1a6;
+}
+
+.company-logos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.company-logo {
+  display: inline-grid;
+  place-items: center;
+  min-width: 52px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(245, 245, 247, 0.18);
+  border-radius: 7px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  color: rgba(245, 245, 247, 0.86);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+.company-logo:hover,
+.company-logo:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(122, 183, 255, 0.55);
+  background:
+    linear-gradient(145deg, rgba(122, 183, 255, 0.22), rgba(255, 255, 255, 0.05));
+  color: #fff;
+  outline: none;
+}
+
+.logo-sl {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.logo-neuromeka,
+.logo-eduoneq {
+  min-width: 42px;
+}
+
+.logo-kiost {
+  min-width: 68px;
+}
+
+.logo-sean {
+  min-width: 62px;
 }
 
 .enterprise-card p:not(.card-label):not(.company-name),
@@ -1702,6 +1765,16 @@ body.modal-open {
   .research-card,
   .activity-card {
     min-height: auto;
+  }
+
+  .enterprise-card-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .company-logos {
+    justify-content: flex-start;
+    margin-bottom: 6px;
   }
 
   .result-panel + .result-panel,
