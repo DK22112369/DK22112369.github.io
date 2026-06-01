@@ -259,12 +259,18 @@ a {
   max-width: 860px;
 }
 
-.hero-photo {
+.hero-media {
   justify-self: end;
   position: relative;
   z-index: 3;
   grid-column: 2;
   grid-row: 1;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.hero-photo {
   width: 252px;
   height: 324px;
   margin: 0;
@@ -273,6 +279,40 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 18px;
   box-shadow: 0 26px 70px rgba(0, 0, 0, 0.16);
+}
+
+.hero-logo-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 252px;
+}
+
+.hero-logo-row a {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(18px);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.hero-logo-row a:hover,
+.hero-logo-row a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(0, 113, 227, 0.28);
+  outline: none;
+}
+
+.hero-logo-row img {
+  display: block;
+  max-width: 100%;
+  max-height: 22px;
+  object-fit: contain;
 }
 
 .eyebrow {
@@ -675,20 +715,23 @@ h4 {
 .company-logo {
   display: inline-grid;
   place-items: center;
-  min-width: 52px;
-  height: 36px;
-  padding: 0 12px;
+  width: 84px;
+  height: 38px;
+  padding: 7px 10px;
   border: 1px solid rgba(245, 245, 247, 0.18);
   border-radius: 7px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
-  color: rgba(245, 245, 247, 0.86);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
   text-decoration: none;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition: border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+.company-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 24px;
+  object-fit: contain;
 }
 
 .company-logo:hover,
@@ -702,21 +745,22 @@ h4 {
 }
 
 .logo-sl {
-  font-size: 14px;
-  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .logo-neuromeka,
 .logo-eduoneq {
-  min-width: 42px;
+  width: 86px;
 }
 
 .logo-kiost {
-  min-width: 68px;
+  width: 90px;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .logo-sean {
-  min-width: 62px;
+  width: 86px;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .enterprise-card p:not(.card-label):not(.company-name),
@@ -1349,6 +1393,27 @@ body.modal-open {
   border-radius: 8px;
 }
 
+.platform-visual img {
+  position: relative;
+  z-index: 2;
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 18px;
+}
+
+.platform-visual.has-image img {
+  display: block;
+}
+
+.platform-visual.has-image::before,
+.platform-visual.has-image .platform-visual__body,
+.platform-visual.has-image .platform-visual__line,
+.platform-visual.has-image .platform-visual__dot {
+  display: none;
+}
+
 .platform-visual::before {
   content: "";
   position: absolute;
@@ -1621,10 +1686,17 @@ body.modal-open {
 }
 
 @media (max-width: 1120px) {
+  .hero-media {
+    margin-left: 30px;
+  }
+
   .hero-photo {
     width: 220px;
     height: 283px;
-    margin-left: 30px;
+  }
+
+  .hero-logo-row {
+    width: 220px;
   }
 
   .hero-content {
@@ -1810,13 +1882,20 @@ body.modal-open {
     font-size: 24px;
   }
 
-  .hero-photo {
+  .hero-media {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
+    margin: 0 auto 18px;
+  }
+
+  .hero-photo {
     width: 104px;
     height: 134px;
-    margin: 0 auto 18px;
+  }
+
+  .hero-logo-row {
+    width: min(220px, 100%);
   }
 
   .hero-content {
@@ -1894,10 +1973,18 @@ body.modal-open {
     max-width: none;
   }
 
-  .hero-photo {
+  .hero-media {
     position: static;
+    margin: 0 auto 20px;
+  }
+
+  .hero-photo {
     width: 140px;
     height: auto;
     box-shadow: none;
+  }
+
+  .hero-logo-row {
+    width: min(220px, 100%);
   }
 }

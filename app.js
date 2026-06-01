@@ -185,6 +185,7 @@
     const modalKind = platformModal.querySelector("[data-platform-modal-kind]");
     const modalLink = platformModal.querySelector("[data-platform-modal-link]");
     const modalVisual = platformModal.querySelector("[data-platform-modal-visual]");
+    const modalImage = platformModal.querySelector("[data-platform-modal-image]");
     const closeButton = platformModal.querySelector("[data-platform-close]");
     let lastFocused = null;
 
@@ -206,6 +207,11 @@
       if (modalVisual) {
         modalVisual.dataset.visual = trigger.dataset.platformVisual || "platform";
         modalVisual.setAttribute("aria-label", `${trigger.dataset.platformTitle || "플랫폼"} 이미지`);
+        modalVisual.classList.toggle("has-image", Boolean(trigger.dataset.platformImage));
+      }
+      if (modalImage) {
+        modalImage.src = trigger.dataset.platformImage || "";
+        modalImage.alt = trigger.dataset.platformTitle ? `${trigger.dataset.platformTitle} 실제 이미지` : "";
       }
 
       platformModal.hidden = false;
