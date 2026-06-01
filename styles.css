@@ -10,6 +10,8 @@
   --line-soft: rgba(0, 0, 0, 0.07);
   --blue: #0071e3;
   --blue-dark: #005bb5;
+  --card-bg: rgba(255, 255, 255, 0.78);
+  --card-hover: rgba(0, 113, 227, 0.045);
   --dark: #0b0b0d;
   --dark-panel: #161617;
   --dark-line: rgba(255, 255, 255, 0.18);
@@ -536,7 +538,7 @@ h4 {
 }
 
 .section {
-  padding: 84px 0;
+  padding: 92px 0;
 }
 
 .section-shell {
@@ -578,7 +580,11 @@ h4 {
 
 .section-heading {
   max-width: 840px;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+}
+
+.section-heading h2 {
+  margin-bottom: 14px;
 }
 
 .section-heading p:last-child {
@@ -703,17 +709,51 @@ h4 {
 
 .research-card,
 .result-panel {
-  background: var(--surface);
+  background: var(--card-bg);
   border: 1px solid var(--line-soft);
   border-radius: 8px;
   box-shadow: var(--shadow-tight);
+  backdrop-filter: blur(18px);
 }
 
 .research-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 330px;
   padding: 24px;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.research-card::before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  margin-bottom: 18px;
+  border: 1.6px solid #8a8a91;
+  border-radius: 7px;
+  background: linear-gradient(135deg, transparent 45%, rgba(0, 113, 227, 0.1) 45%);
+}
+
+.research-card:nth-child(2)::before,
+.research-card:nth-child(4)::before {
+  border-radius: 999px;
+}
+
+.research-card:nth-child(3)::before {
+  transform: rotate(45deg);
+}
+
+.research-card:nth-child(5)::before {
+  border-radius: 50% 50% 50% 8px;
+}
+
+.research-card:hover {
+  transform: translateY(-2px);
+  background: var(--surface);
+  border-color: rgba(0, 113, 227, 0.2);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.09);
 }
 
 .card-label {
@@ -768,6 +808,12 @@ h4 {
 
 .result-panel {
   padding: 26px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.result-panel:hover {
+  border-color: rgba(0, 113, 227, 0.18);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
 }
 
 .result-panel.wide {
@@ -1277,6 +1323,8 @@ body.modal-open {
     --line-soft: rgba(255, 255, 255, 0.1);
     --blue: #2997ff;
     --blue-dark: #0071e3;
+    --card-bg: rgba(29, 29, 31, 0.82);
+    --card-hover: rgba(41, 151, 255, 0.08);
     --dark: #050505;
     --dark-panel: #161617;
     --dark-line: rgba(255, 255, 255, 0.16);
@@ -1301,10 +1349,18 @@ body.modal-open {
   .button-secondary,
   .profile-tags li,
   .impact-strip,
-  .result-panel,
-  .research-card,
   .activity-card {
     background: rgba(29, 29, 31, 0.82);
+  }
+
+  .research-card::before {
+    border-color: #a1a1a6;
+    background: linear-gradient(135deg, transparent 45%, rgba(41, 151, 255, 0.16) 45%);
+  }
+
+  .research-card:hover,
+  .result-panel:hover {
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
   }
 
   .menu-toggle span:not(.sr-only) {

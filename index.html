@@ -37,8 +37,8 @@
     >
     <meta name="twitter:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260601i">
-    <script src="app.js?v=20260601i" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260601j">
+    <script src="app.js?v=20260601j" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 이동</a>
@@ -169,8 +169,8 @@
             <p class="eyebrow">Technical Evidence</p>
             <h2 id="research-title">ADAS 시스템 검증을 뒷받침하는 연구 트랙</h2>
             <p>
-              차량 안전 신호, 센서 검증, Fail-Safe 판단, SW 통합 테스트, HW 실험, Mechatronics 제어를 논문과 실험 수치로 검증했습니다.
-              발레오모빌리티의 System Validation, SW Integration & Test, HW, Mechatronics 직무에서 바로 읽히는 근거를 우선 배치했습니다.
+              차량 안전 신호, 센서 검증, Fail-Safe 판단, SW 통합 테스트, HW 실험, Mechatronics 제어를 같은 흐름으로 정리했습니다.
+              각 항목은 입력 신호, 실험 구성, 검증 결과가 보이도록 배치했습니다.
             </p>
           </div>
 
@@ -179,8 +179,8 @@
               <p class="card-label">System Validation</p>
               <h3>OCC 기반 차량 안전 시스템 검증</h3>
               <p>
-                카메라 기반 후미등 신호 인식과 ERP-42·LIMO Pro 실험 플랫폼을 통해
-                안전 신호가 제어 트리거로 동작하는지 검증하고, 실험 결과와 발표 자료를 문서화했습니다.
+                후미등 점멸 신호를 카메라로 입력받고, ERP-42·LIMO Pro 플랫폼에서 제어 트리거로 연결했습니다.
+                신호 판별 결과와 발표 자료를 함께 문서화해 시스템 검증 근거로 정리했습니다.
               </p>
               <dl>
                 <div><dt>Platform</dt><dd>ERP-42, LIMO Pro, optical signal setup</dd></div>
@@ -192,8 +192,8 @@
               <p class="card-label">SW Integration & Test</p>
               <h3>AprilTag·Odometry 동기화 로깅</h3>
               <p>
-                단안 RGB 카메라 기반 AprilTag 상대거리 추정과 odometry 로그를 동기화하고,
-                접근·정지 시나리오의 검출률, 프레임 로그, 제어 상태를 CSV로 분석했습니다.
+                단안 RGB 카메라의 AprilTag 인식값과 odometry 로그를 동기화했습니다.
+                접근·정지 시나리오의 검출률, 프레임 로그, 제어 상태를 CSV로 남겨 SW 통합 테스트 관점에서 분석했습니다.
               </p>
               <dl>
                 <div><dt>Static Detection</dt><dd>100.00%</dd></div>
@@ -205,8 +205,8 @@
               <p class="card-label">HW / Sensor Validation</p>
               <h3>Camera-PSD 융합 센서 정밀도 검증</h3>
               <p>
-                카메라, 레이저, 2축 모터, PSD 센서를 결합해 광학 센서 기반 위치 측정 정밀도를 검증했습니다.
-                센서 셋업, 반복 실험, 오차 분석을 통해 HW 검증 직무와 연결되는 근거를 확보했습니다.
+                카메라, 레이저, 2축 모터, PSD 센서를 결합해 광학 위치 측정 시스템을 구성했습니다.
+                반복 실험과 오차 분석으로 센서 셋업과 HW 검증 경험을 수치화했습니다.
               </p>
               <dl>
                 <div><dt>JCCI Result</dt><dd>2.9464 mm mean 3D Euclidean error</dd></div>
@@ -218,8 +218,8 @@
               <p class="card-label">ADAS Safety Signal</p>
               <h3>후미등 OCC 기반 안전 제어 트리거</h3>
               <p>
-                LIMO Pro와 ERP-42 플랫폼에서 LED 후미등 ROI 밝기 시계열을 FFT로 분석해
-                2 Hz, 11 Hz 안전 상태 심볼을 분리하고, 차량 안전 시스템의 신호 판별 흐름을 검증했습니다.
+                LED 후미등 ROI 밝기 시계열을 FFT로 분석해 2 Hz, 11 Hz 안전 상태 심볼을 분리했습니다.
+                차량 안전 시스템에서 신호가 상태 판단으로 이어지는 흐름을 실험으로 확인했습니다.
               </p>
               <dl>
                 <div><dt>Distance</dt><dd>1.0 m repeated trials</dd></div>
@@ -231,8 +231,8 @@
               <p class="card-label">Fail-Safe Screening</p>
               <h3>알람 예산 기반 사고 심각도 선별</h3>
               <p>
-                희귀 Sev4 사고를 놓치는 Accuracy Paradox를 운영 관점으로 재정의하고,
-                경보율 예산 안에서 고위험 상황을 우선 선별하는 FiGNN-Crash 경량 모델을 검증했습니다.
+                희귀 Sev4 사고를 놓치는 Accuracy Paradox를 Fail-Safe 요구사항 관점에서 재정의했습니다.
+                제한된 경보율 안에서 고위험 상황을 우선 선별하는 FiGNN-Crash 경량 모델을 검증했습니다.
               </p>
               <dl>
                 <div><dt>Sev4 Recall</dt><dd>59.2% at 32.5% alarm rate</dd></div>
@@ -244,8 +244,8 @@
               <p class="card-label">Mechatronics</p>
               <h3>내부 부하 피드백 어드미턴스 제어</h3>
               <p>
-                추가 힘/토크 센서 없이 Dynamixel AX-12A의 Present Load를 필터링해
-                구동부 피드백, 필터링, 가상 질량-댐퍼-스프링 모델 기반 순응 제어 가능성을 확인했습니다.
+                Dynamixel AX-12A의 Present Load를 필터링해 별도 힘/토크 센서 없이 피드백을 구성했습니다.
+                가상 질량-댐퍼-스프링 모델로 외란에 반응하고 복귀하는 순응 제어 가능성을 확인했습니다.
               </p>
               <dl>
                 <div><dt>Feedback</dt><dd>Deadband + low-pass filtered load</dd></div>
@@ -457,7 +457,7 @@
                 <h2 id="enterprise-title">기업과제</h2>
                 <p>
                   실제 기업·기관 과제에서 센서 입력, 제어 상태, 통신 환경, 로봇 플랫폼을 실험으로 연결했습니다.
-                  ADAS System Validation과 SW/HW 통합 테스트 관점에서 설명 가능한 수행 경험입니다.
+                  각 과제는 담당 역할, 검증 대상, 활용 기술이 보이도록 정리했습니다.
                 </p>
               </div>
 
@@ -472,7 +472,7 @@
                   <a class="enterprise-project-link" href="https://www.etnews.com/20260424000033" target="_blank" rel="noopener noreferrer">
                     <h3>휴머노이드 AMR 로봇 공장 적용</h3>
                     <p>
-                      휴머노이드 AMR 로봇을 공장 환경에 적용하는 과제에서 로봇의 정밀 자율 위치 추종 파트를 담당했습니다.
+                      휴머노이드 AMR 로봇의 공장 적용 과제에서 정밀 자율 위치 추종을 맡았습니다.
                       이동 기준점, 로봇 상태, 제어 흐름을 맞추는 검증 관점으로 참여했습니다.
                     </p>
                   </a>
@@ -492,7 +492,7 @@
                     <p>
                       한국해양과학기술원 과제인 Development of Transmission Algorithm for Underwater Simultaneous
                       Lightwave Information and Power Transmission에서 이축모터 제어를 통한 통신환경 개선을 맡았습니다.
-                      광축 정렬, 모터 제어, 통신 품질 개선을 HW 실험 관점으로 다뤘습니다.
+                      광축 정렬, 모터 제어, 통신 품질 개선을 HW 실험 관점으로 정리했습니다.
                     </p>
                   </a>
                   <ul>
@@ -508,8 +508,8 @@
                   <p class="card-label">SW Integration · SLAM Test</p>
                   <h3>사족보행로봇 제작 및 SLAM 구현</h3>
                   <p>
-                    주식회사 에듀원큐 과제에서 사족보행로봇 제작과 SLAM 구현 흐름에 참여했습니다.
-                    로봇 하드웨어 구성, 주행 환경 인식, 위치 추정 기반 동작 검증을 통합 테스트 관점으로 다뤘습니다.
+                    주식회사 에듀원큐 과제에서 사족보행로봇 제작과 SLAM 구현에 참여했습니다.
+                    하드웨어 구성, 주행 환경 인식, 위치 추정 기반 동작 검증을 통합 테스트 관점으로 다뤘습니다.
                   </p>
                   <ul>
                     <li>역할: 사족보행 플랫폼 제작·SLAM 구현</li>
@@ -680,30 +680,30 @@
         <div class="section-shell">
           <div class="section-heading">
             <p class="eyebrow">Experience</p>
-            <h2 id="timeline-title">최근 활동 흐름</h2>
+            <h2 id="timeline-title">경험 흐름</h2>
           </div>
           <div class="timeline">
             <article>
               <time datetime="2021-03">2021.03 - 2027.02 예정</time>
               <h3>영남대학교 로봇공학전공 · 자동차부품혁신전공 복수전공</h3>
-              <p>로봇 제어, 임베디드 시스템, 컴퓨터 비전, 자동차 설계·CAD/CAE, 센서와 액추에이터 기반 과목과 연구 프로젝트를 연결했습니다.</p>
+              <p>로봇 제어, 임베디드 시스템, 컴퓨터 비전, 자동차 설계·CAD/CAE, 센서와 액추에이터 기반 과목을 연구 프로젝트와 연결했습니다.</p>
             </article>
             <article>
               <time datetime="2025-09">2025.09 - 2026.02</time>
               <h3>기업과제 기반 차량 안전 신호·시스템 검증 흐름</h3>
-              <p>후미등 점멸 패턴, 안전 상태, 로봇 플랫폼의 센서 입력을 카메라 인식과 제어 트리거로 연결하는 검증 프로젝트를 수행했습니다.</p>
+              <p>후미등 점멸 패턴, 안전 상태, 로봇 플랫폼의 센서 입력을 카메라 인식과 제어 트리거로 연결했습니다.</p>
             </article>
             <article>
               <time datetime="2025-08">2025.08 - 현재</time>
               <h3>ADAS·AI·로봇 시스템 구현 연구</h3>
-              <p>차량 안전 신호, 컴퓨터 비전, 센서 융합, Fail-Safe 판단, 로봇 제어 관련 실험 구현과 논문 작성에 참여했습니다.</p>
+              <p>차량 안전 신호, 컴퓨터 비전, 센서 융합, Fail-Safe 판단, 로봇 제어 실험을 구현하고 논문으로 정리했습니다.</p>
             </article>
             <article>
               <time datetime="2024-03">2024.03 - 현재</time>
               <h3>
                 <a href="https://readdy.cc/preview/383e757f-3d4f-4edc-b1a2-cede50b76e0f/8049666/" target="_blank" rel="noopener noreferrer">Phocus / Phocus Vision / Phocus Robotics</a>
               </h3>
-              <p>동아리 대표로 광학, 비전, AI, 로봇 관련 프로젝트 기획과 장비 운용, 팀 조율을 담당했습니다.</p>
+              <p>동아리 대표로 광학, 비전, AI, 로봇 프로젝트를 기획하고 장비 운용과 팀 조율을 담당했습니다.</p>
             </article>
           </div>
         </div>
@@ -713,9 +713,9 @@
         <div class="section-shell">
           <div class="section-heading">
             <p class="eyebrow">Exhibition · Presentation</p>
-            <h2 id="public-activities-title">외부 전시·발표 활동</h2>
+            <h2 id="public-activities-title">외부 발표와 전시</h2>
             <p>
-              기업과제와 연구 성과를 외부 행사에서 설명하고, ADAS 센서 검증과 차량 안전 시스템 관점으로 확장하는 활동입니다.
+              기업과제와 연구 성과를 외부 행사에서 설명하고, ADAS 센서 검증과 차량 안전 시스템 관점으로 확장했습니다.
             </p>
           </div>
 
@@ -725,7 +725,7 @@
               <h3><a href="https://www.fixkorea.or.kr" target="_blank" rel="noopener noreferrer">FIX 2026 부스 참가 예정</a></h3>
               <p>
                 ADAS 센서 검증, 차량 안전 신호, 로봇 플랫폼 기반 안전 감지 시스템 성과를 부스 형태로 소개할 예정입니다.
-                카메라·OCC·PSD·로봇 플랫폼을 실제 시스템 검증 관점에서 보여주는 방향으로 준비하고 있습니다.
+                카메라·OCC·PSD·로봇 플랫폼을 시스템 검증 관점에서 보여주는 방향으로 준비하고 있습니다.
               </p>
             </article>
 
@@ -734,7 +734,7 @@
               <h3><a href="https://www.difa.or.kr" target="_blank" rel="noopener noreferrer">한국자동차공학한림원 세션 차량안전시스템 발표</a></h3>
               <p>
                 DIFA 2025에서 한국자동차공학한림원 세션으로 참가해 차량안전시스템을 발표했습니다.
-                후미등 OCC, 안전 상태 판별, 로봇 플랫폼 적용 가능성을 자동차 안전 시스템 검증 관점에서 설명했습니다.
+                후미등 OCC, 안전 상태 판별, 로봇 플랫폼 적용 가능성을 차량 안전 시스템 검증 관점에서 설명했습니다.
               </p>
             </article>
           </div>
