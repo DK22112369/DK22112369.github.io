@@ -184,6 +184,7 @@
     const modalSummary = platformModal.querySelector("[data-platform-modal-summary]");
     const modalKind = platformModal.querySelector("[data-platform-modal-kind]");
     const modalLink = platformModal.querySelector("[data-platform-modal-link]");
+    const modalVisual = platformModal.querySelector("[data-platform-modal-visual]");
     const closeButton = platformModal.querySelector("[data-platform-close]");
     let lastFocused = null;
 
@@ -201,7 +202,11 @@
       modalSummary.textContent = trigger.dataset.platformSummary || "";
       modalKind.textContent = trigger.dataset.platformKind || "Platform";
       modalLink.href = trigger.dataset.platformLink || "#";
-      modalLink.textContent = `${trigger.dataset.platformTitle || "플랫폼"} 사진·자료 링크 열기`;
+      modalLink.textContent = `${trigger.dataset.platformTitle || "플랫폼"} 자료 링크 열기`;
+      if (modalVisual) {
+        modalVisual.dataset.visual = trigger.dataset.platformVisual || "platform";
+        modalVisual.setAttribute("aria-label", `${trigger.dataset.platformTitle || "플랫폼"} 이미지`);
+      }
 
       platformModal.hidden = false;
       document.body.classList.add("modal-open");
