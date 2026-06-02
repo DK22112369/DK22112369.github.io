@@ -288,19 +288,30 @@
   if (recommendModal && recommendTriggers.length > 0) {
     const modalTitle = recommendModal.querySelector("[data-recommend-modal-title]");
     const modalSummary = recommendModal.querySelector("[data-recommend-modal-summary]");
+    const modalViewer = recommendModal.querySelector("[data-recommend-viewer]");
+    const modalImage = recommendModal.querySelector("[data-recommend-modal-image]");
+    const modalNote = recommendModal.querySelector("[data-recommend-note]");
     const closeButton = recommendModal.querySelector("[data-recommend-close]");
     let lastFocused = null;
 
     const closeModal = () => {
       recommendModal.hidden = true;
+      if (modalImage) modalImage.removeAttribute("src");
       document.body.classList.remove("modal-open");
       if (lastFocused) lastFocused.focus();
     };
 
     const openModal = (trigger) => {
       lastFocused = trigger;
+      const image = trigger.dataset.recommendImage || "";
       modalTitle.textContent = trigger.dataset.recommendTitle || "";
       modalSummary.textContent = trigger.dataset.recommendSummary || "";
+      if (modalViewer) modalViewer.hidden = !image;
+      if (modalNote) modalNote.hidden = !image;
+      if (modalImage) {
+        modalImage.src = image;
+        modalImage.alt = trigger.dataset.recommendTitle ? `${trigger.dataset.recommendTitle} 이미지` : "";
+      }
       recommendModal.hidden = false;
       document.body.classList.add("modal-open");
       closeButton.focus();

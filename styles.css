@@ -1664,6 +1664,23 @@ body.modal-open {
   font-size: 13px;
 }
 
+.recommendation-viewer {
+  max-height: min(72vh, 920px);
+  margin: 22px 0 14px;
+  overflow: auto;
+  background: #f5f5f7;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+}
+
+.recommendation-viewer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .site-footer {
   padding: 26px max(24px, calc((100vw - 1180px) / 2));
   background: #000;
