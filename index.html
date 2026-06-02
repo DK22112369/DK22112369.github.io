@@ -37,8 +37,8 @@
     >
     <meta name="twitter:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260602b">
-    <script src="app.js?v=20260602b" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260602c">
+    <script src="app.js?v=20260602c" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 이동</a>
@@ -62,7 +62,7 @@
       <nav id="site-nav" class="site-nav" aria-label="주요 섹션">
         <a href="#overview">개요</a>
         <a href="#results">성과</a>
-        <a href="#research">연구</a>
+        <a href="#papers-title">연구</a>
       </nav>
     </header>
 
@@ -170,99 +170,6 @@
               </a>
             </li>
           </ul>
-        </div>
-      </section>
-
-      <section id="research" class="section section-anchor" aria-labelledby="research-title">
-        <div class="section-shell">
-          <div class="section-heading">
-            <p class="eyebrow">Technical Evidence</p>
-            <h2 id="research-title">ADAS 시스템 검증을 뒷받침하는 연구 트랙</h2>
-            <p>
-              차량 안전 신호, 센서 검증, Fail-Safe 판단, SW 통합 테스트, HW 실험, Mechatronics 제어를 같은 흐름으로 정리했습니다.
-              각 항목은 입력 신호, 실험 구성, 검증 결과가 보이도록 배치했습니다.
-            </p>
-          </div>
-
-          <div class="research-grid">
-            <article class="research-card">
-              <p class="card-label">System Validation</p>
-              <h3>OCC 기반 차량 안전 시스템 검증</h3>
-              <p>
-                후미등 점멸 신호를 카메라로 입력받고, ERP-42·LIMO Pro 플랫폼에서 제어 트리거로 연결했습니다.
-                신호 판별 결과와 발표 자료를 함께 문서화해 시스템 검증 근거로 정리했습니다.
-              </p>
-              <dl>
-                <div><dt>Platform</dt><dd>ERP-42, LIMO Pro, optical signal setup</dd></div>
-                <div><dt>Output</dt><dd>Project concept, experiments, presentation</dd></div>
-              </dl>
-            </article>
-
-            <article class="research-card">
-              <p class="card-label">SW Integration & Test</p>
-              <h3>AprilTag·Odometry 동기화 로깅</h3>
-              <p>
-                단안 RGB 카메라의 AprilTag 인식값과 odometry 로그를 동기화했습니다.
-                접근·정지 시나리오의 검출률, 프레임 로그, 제어 상태를 CSV로 남겨 SW 통합 테스트 관점에서 분석했습니다.
-              </p>
-              <dl>
-                <div><dt>Static Detection</dt><dd>100.00%</dd></div>
-                <div><dt>Total Detection</dt><dd>73.61% across 269 frames</dd></div>
-              </dl>
-            </article>
-
-            <article class="research-card">
-              <p class="card-label">HW / Sensor Validation</p>
-              <h3>Camera-PSD 융합 센서 정밀도 검증</h3>
-              <p>
-                카메라, 레이저, 2축 모터, PSD 센서를 결합해 광학 위치 측정 시스템을 구성했습니다.
-                반복 실험과 오차 분석으로 센서 셋업과 HW 검증 경험을 수치화했습니다.
-              </p>
-              <dl>
-                <div><dt>JCCI Result</dt><dd>2.9464 mm mean 3D Euclidean error</dd></div>
-                <div><dt>KICS Result</dt><dd>10.4266 mm RMS error in grid movement</dd></div>
-              </dl>
-            </article>
-
-            <article class="research-card">
-              <p class="card-label">ADAS Safety Signal</p>
-              <h3>후미등 OCC 기반 안전 제어 트리거</h3>
-              <p>
-                LED 후미등 ROI 밝기 시계열을 FFT로 분석해 2 Hz, 11 Hz 안전 상태 심볼을 분리했습니다.
-                차량 안전 시스템에서 신호가 상태 판단으로 이어지는 흐름을 실험으로 확인했습니다.
-              </p>
-              <dl>
-                <div><dt>Distance</dt><dd>1.0 m repeated trials</dd></div>
-                <div><dt>Decode</dt><dd>100.00% success for both symbols</dd></div>
-              </dl>
-            </article>
-
-            <article class="research-card">
-              <p class="card-label">Fail-Safe Screening</p>
-              <h3>알람 예산 기반 사고 심각도 선별</h3>
-              <p>
-                희귀 Sev4 사고를 놓치는 Accuracy Paradox를 Fail-Safe 요구사항 관점에서 재정의했습니다.
-                제한된 경보율 안에서 고위험 상황을 우선 선별하는 FiGNN-Crash 경량 모델을 검증했습니다.
-              </p>
-              <dl>
-                <div><dt>Sev4 Recall</dt><dd>59.2% at 32.5% alarm rate</dd></div>
-                <div><dt>Latency</dt><dd>0.835 ms/sample on RTX 3080</dd></div>
-              </dl>
-            </article>
-
-            <article class="research-card">
-              <p class="card-label">Mechatronics</p>
-              <h3>내부 부하 피드백 어드미턴스 제어</h3>
-              <p>
-                Dynamixel AX-12A의 Present Load를 필터링해 별도 힘/토크 센서 없이 피드백을 구성했습니다.
-                가상 질량-댐퍼-스프링 모델로 외란에 반응하고 복귀하는 순응 제어 가능성을 확인했습니다.
-              </p>
-              <dl>
-                <div><dt>Feedback</dt><dd>Deadband + low-pass filtered load</dd></div>
-                <div><dt>Response</dt><dd>Approx. ±140 raw, ±41° displacement</dd></div>
-              </dl>
-            </article>
-          </div>
         </div>
       </section>
 
