@@ -1674,6 +1674,14 @@ body.modal-open {
   margin: 0;
 }
 
+.site-footer .footer-privacy {
+  max-width: 760px;
+  margin-top: 8px;
+  color: #6e6e73;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #000000;
