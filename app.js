@@ -90,6 +90,7 @@
     const closeButton = paperModal.querySelector("[data-paper-close]");
     const viewerTitle = paperViewerModal?.querySelector("[data-paper-viewer-title]");
     const viewerFrame = paperViewerModal?.querySelector("[data-paper-frame]");
+    const viewerNote = paperViewerModal?.querySelector("[data-paper-viewer-note]");
     const viewerCloseButton = paperViewerModal?.querySelector("[data-paper-viewer-close]");
     let lastFocused = null;
     let selectedPaperPdf = "";
@@ -117,6 +118,7 @@
       if (!paperViewerModal || !viewerFrame || !selectedPaperPdf) return;
       const pdfUrl = `${selectedPaperPdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
       if (viewerTitle) viewerTitle.textContent = selectedPaperTitle || "논문 보기";
+      if (viewerNote) viewerNote.textContent = "자세한 내용은 학회 홈페이지에서 확인 가능합니다.";
       viewerFrame.src = pdfUrl;
       paperViewerModal.hidden = false;
       document.body.classList.add("modal-open");
@@ -172,6 +174,52 @@
         return;
       }
       if (!paperModal.hidden) closeModal();
+    });
+  }
+
+  const certificateTriggers = [...document.querySelectorAll("[data-certificate-pdf]")];
+  if (paperViewerModal && certificateTriggers.length > 0) {
+    const viewerTitle = paperViewerModal.querySelector("[data-paper-viewer-title]");
+    const viewerFrame = paperViewerModal.querySelector("[data-paper-frame]");
+    const viewerNote = paperViewerModal.querySelector("[data-paper-viewer-note]");
+    const viewerCloseButton = paperViewerModal.querySelector("[data-paper-viewer-close]");
+    let certificateLastFocused = null;
+    let certificateViewerOpen = false;
+
+    const closeCertificateViewer = () => {
+      if (!certificateViewerOpen) return;
+      paperViewerModal.hidden = true;
+      if (viewerFrame) viewerFrame.removeAttribute("src");
+      document.body.classList.remove("modal-open");
+      certificateViewerOpen = false;
+      if (certificateLastFocused) certificateLastFocused.focus();
+    };
+
+    certificateTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        if (!viewerFrame) return;
+        certificateLastFocused = trigger;
+        const title = trigger.dataset.certificateTitle || "이수증 보기";
+        const pdf = trigger.dataset.certificatePdf || "";
+        if (!pdf) return;
+        if (viewerTitle) viewerTitle.textContent = title;
+        if (viewerNote) viewerNote.textContent = "이수증은 화면 열람용으로 표시됩니다.";
+        viewerFrame.src = `${pdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
+        certificateViewerOpen = true;
+        paperViewerModal.hidden = false;
+        document.body.classList.add("modal-open");
+        if (viewerCloseButton) viewerCloseButton.focus();
+      });
+    });
+
+    if (viewerCloseButton) {
+      viewerCloseButton.addEventListener("click", closeCertificateViewer);
+    }
+    paperViewerModal.addEventListener("click", (event) => {
+      if (event.target === paperViewerModal) closeCertificateViewer();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !paperViewerModal.hidden) closeCertificateViewer();
     });
   }
 

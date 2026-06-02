@@ -1031,10 +1031,23 @@ h4 {
   text-underline-offset: 3px;
 }
 
+.certificate-trigger {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 .award-list a:hover,
 .award-list a:focus-visible,
 .tool-list a:hover,
-.tool-list a:focus-visible {
+.tool-list a:focus-visible,
+.certificate-trigger:hover,
+.certificate-trigger:focus-visible {
   color: var(--blue);
   text-decoration: underline;
   outline: none;
