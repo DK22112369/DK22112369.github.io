@@ -753,14 +753,35 @@ h4 {
   width: 86px;
 }
 
+.logo-neuromeka {
+  width: 118px;
+  background: rgba(20, 20, 22, 0.92);
+}
+
+.logo-neuromeka img {
+  max-height: 28px;
+}
+
+.logo-eduoneq {
+  background: #fff;
+}
+
 .logo-kiost {
-  width: 90px;
+  width: 118px;
   background: rgba(255, 255, 255, 0.92);
 }
 
+.logo-kiost img {
+  max-height: 28px;
+}
+
 .logo-sean {
-  width: 86px;
+  width: 136px;
   background: rgba(255, 255, 255, 0.92);
+}
+
+.logo-sean img {
+  max-height: 32px;
 }
 
 .enterprise-card p:not(.card-label):not(.company-name),
