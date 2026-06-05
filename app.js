@@ -1,4 +1,65 @@
 (() => {
+  const accessGate = document.querySelector("[data-access-gate]");
+  const accessForm = document.querySelector("[data-access-form]");
+  const accessInput = document.querySelector("[data-access-input]");
+  const accessError = document.querySelector("[data-access-error]");
+  const accessStorageKey = "dk-portfolio-access-v2";
+  const accessHash = "9a811f1e6602592dfe11659a453f338c66ef2ced8bd372c296681c756486e0ef";
+
+  const toHex = (buffer) => {
+    return [...new Uint8Array(buffer)].map((value) => value.toString(16).padStart(2, "0")).join("");
+  };
+
+  const digestAccessCode = async (value) => {
+    const encoded = new TextEncoder().encode(value.trim());
+    return toHex(await crypto.subtle.digest("SHA-256", encoded));
+  };
+
+  const unlockAccess = () => {
+    document.body.classList.remove("access-locked");
+    if (accessGate) accessGate.hidden = true;
+  };
+
+  const initAccessGate = async () => {
+    if (!accessGate || !accessForm || !accessInput) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const urlCode = params.get("access") || "";
+    const stored = window.sessionStorage.getItem(accessStorageKey) || window.localStorage.getItem(accessStorageKey);
+
+    if (stored === accessHash || (urlCode && (await digestAccessCode(urlCode)) === accessHash)) {
+      window.sessionStorage.setItem(accessStorageKey, accessHash);
+      window.localStorage.setItem(accessStorageKey, accessHash);
+      if (urlCode) {
+        params.delete("access");
+        const query = params.toString();
+        const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`;
+        window.history.replaceState({}, "", nextUrl);
+      }
+      unlockAccess();
+      return;
+    }
+
+    accessInput.focus();
+  };
+
+  if (accessForm) {
+    accessForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const ok = (await digestAccessCode(accessInput.value)) === accessHash;
+      if (!ok) {
+        if (accessError) accessError.hidden = false;
+        accessInput.select();
+        return;
+      }
+      window.sessionStorage.setItem(accessStorageKey, accessHash);
+      window.localStorage.setItem(accessStorageKey, accessHash);
+      unlockAccess();
+    });
+  }
+
+  initAccessGate();
+
   const nav = document.querySelector(".site-nav");
   const menuButton = document.querySelector(".menu-toggle");
   const navLinks = [...document.querySelectorAll(".site-nav a")];
