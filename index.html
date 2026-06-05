@@ -37,8 +37,8 @@
     >
     <meta name="twitter:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=20260605b">
-    <script src="app.js?v=20260605b" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260605c">
+    <script src="app.js?v=20260605c" defer></script>
   </head>
   <body class="access-locked">
     <div class="access-gate" data-access-gate>
@@ -115,7 +115,6 @@
                 class="profile-tag-button"
                 type="button"
                 data-recommend-title="교수 추천서"
-                data-recommend-summary="장기 현장실습 교수 추천서입니다. 화면 열람용으로만 표시합니다."
                 data-recommend-image="assets/recommendations/professor-recommendation-song-yujae.jpg"
               >교수 추천서</button>
             </li>
@@ -124,7 +123,6 @@
                 class="profile-tag-button"
                 type="button"
                 data-recommend-title="영남대 부총장 추천서"
-                data-recommend-summary="영남대학교 부총장 추천서입니다. 화면 열람용으로만 표시합니다."
                 data-recommend-image="assets/recommendations/vice-president-recommendation-lee-gidong.jpg"
               >영남대 부총장 추천서</button>
             </li>
@@ -854,15 +852,13 @@
     </div>
 
     <div class="paper-modal recommendation-modal" data-recommend-modal hidden>
-      <div class="paper-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="recommend-modal-title" aria-describedby="recommend-modal-summary">
+      <div class="paper-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="recommend-modal-title">
         <button class="paper-modal__close" type="button" aria-label="추천서 닫기" data-recommend-close>×</button>
         <p class="eyebrow">Recommendation</p>
         <h2 id="recommend-modal-title" class="paper-modal__title" data-recommend-modal-title></h2>
-        <p id="recommend-modal-summary" class="paper-modal__summary" data-recommend-modal-summary></p>
         <div class="recommendation-viewer" data-recommend-viewer hidden>
           <img src="" alt="" data-recommend-modal-image>
         </div>
-        <p class="paper-viewer-note" data-recommend-note hidden>추천서는 화면 열람용으로 표시됩니다.</p>
       </div>
     </div>
 
