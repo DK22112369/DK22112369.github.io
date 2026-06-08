@@ -15,14 +15,14 @@
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
     <meta
       name="description"
-      content="김대근 로봇공학전공·자동차부품혁신전공 취업 포트폴리오. ADAS 시스템 검증, 센서 실험, Fail-Safe 판단, SW 통합 테스트, HW·Mechatronics 실험 성과 중심."
+      content="김대근 로봇공학전공·자동차부품혁신전공 취업 포트폴리오. ADAS, LiDAR, 초음파, 카메라, PSD 기반 센서 검증과 Fail-Safe, SW 통합 테스트, HW·Mechatronics 실험 성과 중심."
     >
     <link rel="canonical" href="https://dk22112369.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="김대근 | Automotive Safety & Robotics Portfolio">
     <meta
       property="og:description"
-      content="ADAS 센서 검증, 차량 안전 제어, Fail-Safe 스크리닝, Camera-PSD·OCC·AprilTag 기반 실험을 정리한 시스템 검증형 포트폴리오."
+      content="ADAS 센서 검증, LiDAR·초음파·카메라 기반 인지 관점, 차량 안전 제어, Camera-PSD·OCC·AprilTag 실험을 정리한 시스템 검증형 포트폴리오."
     >
     <meta property="og:url" content="https://dk22112369.github.io/">
     <meta property="og:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="김대근 | Automotive Safety & Robotics Portfolio">
     <meta
       name="twitter:description"
-      content="ADAS 시스템 검증과 자동차 안전 시스템 중심의 취업 포트폴리오."
+      content="ADAS, LiDAR, 초음파, 카메라 센서 검증과 자동차 안전 시스템 중심의 취업 포트폴리오."
     >
     <meta name="twitter:image" content="https://dk22112369.github.io/assets/og-daekeun-kim.jpg">
     <title>김대근 | Automotive Safety & Robotics Portfolio</title>
@@ -99,7 +99,7 @@
           <p class="eyebrow">Yeungnam University · Robotics Engineering · Future Automotive Innovator Parts</p>
           <h1 id="hero-title">
             김대근
-            <span>ADAS 검증·차량 제어 연구자</span>
+            <span>ADAS 센서 검증·차량 제어 연구자</span>
           </h1>
           <ul class="profile-tags" aria-label="학력 및 관심 분야">
             <li class="profile-tag-action profile-tag-major"><a class="profile-tag-link" href="https://robotics.yu.ac.kr/" target="_blank" rel="noopener noreferrer">로봇공학전공</a></li>
@@ -204,16 +204,80 @@
                   <button
                     class="paper-trigger"
                     type="button"
+                    data-paper-title="AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템"
+                    data-paper-english="Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC"
+                    data-paper-conference="KICS 2026"
+                    data-paper-link="https://conf.kics.or.kr/2026s"
+                    data-paper-pdf="assets/papers/kics-2026-apriltag-slam-fsk-occ.pdf"
+                    data-paper-summary="AprilTag, odometry, gmapping SLAM 기반 위치 추정과 저속 FSK-OCC를 결합해 자율주행 로봇의 위치·상태를 외부로 송신하는 연구입니다. AprilTag 카메라 인식, SLAM 위치 안정화, OCC 통신 상태를 함께 검증한 SW/HW 통합 테스트 경험으로 정리했습니다. ADAS 카메라·LiDAR·초음파 센서 검증처럼 센서 입력과 상태 출력을 동기화해 보는 경험입니다."
+                  >
+                    <span class="paper-korean">AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템</span>
+                    <strong>Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC</strong>
+                    <span class="paper-meta">KICS 2026 · AprilTag-SLAM, camera sensor, OCC, SW/HW integration</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="paper-trigger"
+                    type="button"
+                    data-paper-title="차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험"
+                    data-paper-english="AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform"
+                    data-paper-conference="ICROS 2026"
+                    data-paper-link="https://2026.icros.org/"
+                    data-paper-pdf="assets/papers/icros-2026-apriltag-distance-logging.pdf"
+                    data-paper-summary="LIMO Pro 전방 단안 RGB 카메라와 AprilTag를 이용해 상대 거리를 추정하고, odometry와 동기화한 CSV 로그로 접근·정지 제어 성능을 분석한 연구입니다. SW Integration & Test 관점에서 카메라 센서 입력, odometry, 프레임 로그, CSV 분석을 연결한 검증 경험입니다. ADAS 카메라·LiDAR·초음파 센서 테스트처럼 입력 신호와 로그를 맞춰보는 흐름에 강점이 있습니다."
+                  >
+                    <span class="paper-korean">차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험</span>
+                    <strong>AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform</strong>
+                    <span class="paper-meta">ICROS 2026 · ADAS camera validation, AprilTag, monocular RGB, ROS, CSV</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="paper-trigger"
+                    type="button"
+                    data-paper-title="카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석"
+                    data-paper-english="Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion"
+                    data-paper-conference="JCCI 2026"
+                    data-paper-link="https://jcci.kr/sites/jcci2026/program"
+                    data-paper-pdf="assets/papers/jcci-2026-camera-psd-positioning.pdf"
+                    data-paper-summary="실내 모바일 로봇의 위치 정밀도를 높이기 위해 카메라와 PSD 센서를 융합한 연구입니다. 평균 3D 유클리드 오차 2.9464 mm 수준의 실험 결과를 통해 카메라·PSD 센서 셋업, 반복 실험, 오차 분석 기반 HW/Sensor Validation 역량을 보여줍니다. LiDAR·초음파처럼 거리와 위치를 다루는 ADAS 센서 검증 관점과 연결됩니다."
+                  >
+                    <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
+                    <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
+                    <span class="paper-meta">JCCI 2026 · camera-PSD sensor validation, 2.9464 mm mean 3D error</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="paper-trigger"
+                    type="button"
+                    data-paper-title="카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석"
+                    data-paper-english="Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion"
+                    data-paper-conference="KICS 2026"
+                    data-paper-link="https://conf.kics.or.kr/2026s"
+                    data-paper-pdf="assets/papers/kics-2026-camera-psd-analysis.pdf"
+                    data-paper-summary="카메라 기반 광역 탐색과 PSD 기반 정밀 추종을 결합한 하이브리드 측위 연구입니다. ArUco 마커, 레트로리플렉터, 2축 모터, 레이저, PSD 센서를 구성하고 이동 중 타겟 추종 가능성을 검증해 카메라·광학 거리 센서 기반 HW 검증과 Mechatronics 실험 역량을 보여줍니다."
+                  >
+                    <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
+                    <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
+                    <span class="paper-meta">KICS 2026 · camera-PSD, optical sensor, two-axis motor, sensor test</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="paper-trigger"
+                    type="button"
                     data-paper-title="AGV 및 자율주행 플랫폼 기반 FFT 후미등 OCC 주파수 인식을 이용한 차량 안전 제어 트리거 시스템"
                     data-paper-english="Vehicle Safety Control Trigger System Using FFT-Based Taillamp OCC Frequency Recognition on LIMO and ERP-42 Platforms"
                     data-paper-conference="ICROS 2026"
                     data-paper-link="https://2026.icros.org/"
                     data-paper-pdf="assets/papers/icros-2026-occ-safety-trigger.pdf"
-                    data-paper-summary="차량 후미등 점멸 신호를 카메라 기반 OCC로 인식하고, LIMO와 ERP-42 플랫폼에서 안전 제어 트리거로 연결한 연구입니다. ADAS System Validation 관점에서 센서 입력, 신호 판별, 제어 상태 전환을 실험으로 검증한 경험을 보여줍니다."
+                    data-paper-summary="차량 후미등 점멸 신호를 카메라 기반 OCC로 인식하고, LIMO와 ERP-42 플랫폼에서 안전 제어 트리거로 연결한 연구입니다. ADAS System Validation 관점에서 카메라 센서 입력, 신호 판별, 제어 상태 전환을 실험으로 검증한 경험을 보여줍니다. LiDAR·초음파 센서와 함께 쓰이는 차량 주변 인지 센서 검증 흐름으로 확장 가능한 경험입니다."
                   >
                     <span class="paper-korean">AGV 및 자율주행 플랫폼 기반 FFT 후미등 OCC 주파수 인식을 이용한 차량 안전 제어 트리거 시스템</span>
                     <strong>Vehicle Safety Control Trigger System Using FFT-Based Taillamp OCC Frequency Recognition on LIMO and ERP-42 Platforms</strong>
-                    <span class="paper-meta">ICROS 2026 · ADAS safety signal validation, 2 Hz / 11 Hz FFT recognition</span>
+                    <span class="paper-meta">ICROS 2026 · ADAS camera sensor validation, OCC, 2 Hz / 11 Hz FFT recognition</span>
                   </button>
                 </li>
                 <li>
@@ -229,71 +293,7 @@
                   >
                     <span class="paper-korean">알람 예산 기반 자율주행 Fail-Safe 심각도 선별(스크리닝)을 위한 경량 FiGNN 모델 개발</span>
                     <strong>Development of a lightweight FiGNN model for autonomous driving fail-safe severity screening based on alarm budgets</strong>
-                    <span class="paper-meta">JCCI 2026 · Fail-Safe screening, Sev4 recall, real-time inference</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="paper-trigger"
-                    type="button"
-                    data-paper-title="차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험"
-                    data-paper-english="AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform"
-                    data-paper-conference="ICROS 2026"
-                    data-paper-link="https://2026.icros.org/"
-                    data-paper-pdf="assets/papers/icros-2026-apriltag-distance-logging.pdf"
-                    data-paper-summary="LIMO Pro 전방 단안 RGB 카메라와 AprilTag를 이용해 상대 거리를 추정하고, odometry와 동기화한 CSV 로그로 접근·정지 제어 성능을 분석한 연구입니다. SW Integration & Test 관점에서 센서 입력, odometry, 프레임 로그, CSV 분석을 연결한 검증 경험입니다."
-                  >
-                    <span class="paper-korean">차량형 모바일 로봇 플랫폼을 활용한 카메라 기반 AprilTag 상대거리 추정 및 Odometry 동기화 실험</span>
-                    <strong>AprilTag-Based Relative Distance Estimation and Odometry-Synchronized Logging Using a Vehicle-Type Mobile Robot Platform</strong>
-                    <span class="paper-meta">ICROS 2026 · SW integration, monocular RGB, ROS, CSV analysis</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="paper-trigger"
-                    type="button"
-                    data-paper-title="카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석"
-                    data-paper-english="Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion"
-                    data-paper-conference="JCCI 2026"
-                    data-paper-link="https://jcci.kr/sites/jcci2026/program"
-                    data-paper-pdf="assets/papers/jcci-2026-camera-psd-positioning.pdf"
-                    data-paper-summary="실내 모바일 로봇의 위치 정밀도를 높이기 위해 카메라와 PSD 센서를 융합한 연구입니다. 평균 3D 유클리드 오차 2.9464 mm 수준의 실험 결과를 통해 센서 셋업, 반복 실험, 오차 분석 기반 HW/Sensor Validation 역량을 보여줍니다."
-                  >
-                    <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
-                    <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
-                    <span class="paper-meta">JCCI 2026 · HW sensor validation, 2.9464 mm mean 3D Euclidean error</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="paper-trigger"
-                    type="button"
-                    data-paper-title="카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석"
-                    data-paper-english="Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion"
-                    data-paper-conference="KICS 2026"
-                    data-paper-link="https://conf.kics.or.kr/2026s"
-                    data-paper-pdf="assets/papers/kics-2026-camera-psd-analysis.pdf"
-                    data-paper-summary="카메라 기반 광역 탐색과 PSD 기반 정밀 추종을 결합한 하이브리드 측위 연구입니다. ArUco 마커, 레트로리플렉터, 2축 모터, 레이저, PSD 센서를 구성하고 이동 중 타겟 추종 가능성을 검증해 HW와 Mechatronics 사이의 실험 역량을 보여줍니다."
-                  >
-                    <span class="paper-korean">카메라-PSD 융합 기반 실내 모바일 로봇용 하이브리드 초정밀 측위 성능 분석</span>
-                    <strong>Analysis of Hybrid Precision Positioning for Indoor Mobile Robots Based on Camera-PSD Fusion</strong>
-                    <span class="paper-meta">KICS 2026 · camera, PSD, two-axis motor, sensor test</span>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="paper-trigger"
-                    type="button"
-                    data-paper-title="AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템"
-                    data-paper-english="Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC"
-                    data-paper-conference="KICS 2026"
-                    data-paper-link="https://conf.kics.or.kr/2026s"
-                    data-paper-pdf="assets/papers/kics-2026-apriltag-slam-fsk-occ.pdf"
-                    data-paper-summary="AprilTag, odometry, gmapping SLAM 기반 위치 추정과 저속 FSK-OCC를 결합해 자율주행 로봇의 위치·상태를 외부로 송신하는 연구입니다. 센서 상태, 위치 안정화, 통신 상태를 함께 검증한 SW/HW 통합 테스트 경험으로 정리했습니다."
-                  >
-                    <span class="paper-korean">AprilTag-SLAM 기반 위치 안정화와 저속 FSK-OCC를 이용한 자율주행 로봇 자율 위치·상태 송신 시스템</span>
-                    <strong>Autonomous Robot Position and Status Transmission Using AprilTag-SLAM-Based Stabilization and Low-Rate FSK-OCC</strong>
-                    <span class="paper-meta">KICS 2026 · SW/HW integration, position/status signal</span>
+                    <span class="paper-meta">JCCI 2026 · ADAS Fail-Safe, sensor event screening, real-time inference</span>
                   </button>
                 </li>
                 <li>
@@ -320,21 +320,6 @@
                     <button
                       class="paper-trigger"
                       type="button"
-                      data-paper-title="자율주행을 위한 예산 기반 Fail-Safe 스크리닝: 정확도 역설을 다루는 경량 그래프 신경망 접근"
-                      data-paper-english="Budgeted Fail-Safe Screening for Autonomous Driving: A Lightweight Graph Neural Network Approach to the Accuracy Paradox"
-                      data-paper-conference="Submitted to Applied Soft Computing"
-                      data-paper-link="https://www.sciencedirect.com/journal/applied-soft-computing"
-                      data-paper-summary="자율주행 fail-safe 판단에서 단순 정확도보다 고위험 상황을 제한된 알람 예산 안에 우선 선별하는 문제를 다룬 제출 논문입니다. System Validation 직무에서 중요한 위험 이벤트 우선순위, 알람 예산, 경량 추론 관점으로 정리했습니다."
-                    >
-                      <span class="paper-korean">자율주행을 위한 예산 기반 Fail-Safe 스크리닝: 정확도 역설을 다루는 경량 그래프 신경망 접근</span>
-                      <strong>D. Kim, Y. Song*, "Budgeted Fail-Safe Screening for Autonomous Driving: A Lightweight Graph Neural Network Approach to the Accuracy Paradox"</strong>
-                      <span class="paper-meta">Submitted to Applied Soft Computing · fail-safe screening, lightweight GNN, alarm budget</span>
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      class="paper-trigger"
-                      type="button"
                       data-paper-title="정밀 광학 동시 위치 추정 및 통신(FP-OSLAC) 시스템 분석"
                       data-paper-english="Analysis of Fine-Precision Optical Simultaneous Localization and Communication (FP-OSLAC) system"
                       data-paper-conference="Submitted to IEEE Communications Letters"
@@ -344,6 +329,21 @@
                       <span class="paper-korean">정밀 광학 동시 위치 추정 및 통신(FP-OSLAC) 시스템 분석</span>
                       <strong>D. Kim, Y. Song*, "Analysis of Fine-Precision Optical Simultaneous Localization and Communication (FP-OSLAC) system"</strong>
                       <span class="paper-meta">Submitted to IEEE Communications Letters · optical sensor validation, communication, FP-OSLAC</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="paper-trigger"
+                      type="button"
+                      data-paper-title="자율주행을 위한 예산 기반 Fail-Safe 스크리닝: 정확도 역설을 다루는 경량 그래프 신경망 접근"
+                      data-paper-english="Budgeted Fail-Safe Screening for Autonomous Driving: A Lightweight Graph Neural Network Approach to the Accuracy Paradox"
+                      data-paper-conference="Submitted to Applied Soft Computing"
+                      data-paper-link="https://www.sciencedirect.com/journal/applied-soft-computing"
+                      data-paper-summary="자율주행 fail-safe 판단에서 단순 정확도보다 고위험 상황을 제한된 알람 예산 안에 우선 선별하는 문제를 다룬 제출 논문입니다. System Validation 직무에서 중요한 위험 이벤트 우선순위, 알람 예산, 경량 추론 관점으로 정리했습니다."
+                    >
+                      <span class="paper-korean">자율주행을 위한 예산 기반 Fail-Safe 스크리닝: 정확도 역설을 다루는 경량 그래프 신경망 접근</span>
+                      <strong>D. Kim, Y. Song*, "Budgeted Fail-Safe Screening for Autonomous Driving: A Lightweight Graph Neural Network Approach to the Accuracy Paradox"</strong>
+                      <span class="paper-meta">Submitted to Applied Soft Computing · fail-safe screening, lightweight GNN, alarm budget</span>
                     </button>
                   </li>
                 </ol>
@@ -580,7 +580,7 @@
               <div class="skill-columns">
                 <div>
                   <h4>Engineering</h4>
-                  <p>Robotics system integration, automotive parts innovation, embedded systems, sensor fusion, experiment design</p>
+                  <p>ADAS sensor validation, camera·LiDAR·ultrasonic sensing, robotics system integration, embedded systems, sensor fusion, experiment design</p>
                 </div>
                 <div>
                   <h4>Software</h4>
@@ -602,7 +602,7 @@
                       data-platform-link="https://gbrems.gbtp.or.kr/equip/equipDetail/11973"
                       data-platform-visual="vehicle"
                       data-platform-image="assets/platforms/wego-q1.png"
-                      data-platform-summary="카메라, 라이다, 임베디드 보드와 ROS 구동 환경을 포함한 자율 이동 플랫폼입니다. 차량형 로봇 제어와 경로 추종 실험의 기반 장비로 정리했습니다."
+                      data-platform-summary="카메라, LiDAR, 초음파 센서 확장, 임베디드 보드와 ROS 구동 환경을 포함한 자율 이동 플랫폼입니다. 차량형 로봇 제어와 경로 추종 실험의 기반 장비로 정리했습니다."
                     >ERP-42</button>
                     <button
                       class="platform-trigger"
@@ -613,7 +613,7 @@
                       data-platform-link="https://global.agilex.ai/products/limo-pro"
                       data-platform-visual="vehicle"
                       data-platform-image="assets/platforms/limo-pro.png"
-                      data-platform-summary="NVIDIA Orin Nano, LiDAR, depth camera 기반의 소형 모바일 로봇 플랫폼입니다. 실내 SLAM, 위치 추정, 비전 기반 안전 감지 실험에 활용 가능한 장비로 보여줍니다."
+                      data-platform-summary="NVIDIA Orin Nano, LiDAR, depth camera, 초음파 센서 확장 기반의 소형 모바일 로봇 플랫폼입니다. 실내 SLAM, 위치 추정, 비전 기반 안전 감지 실험에 활용 가능한 장비로 보여줍니다."
                     >LIMO Pro</button>
                     <button
                       class="platform-trigger"
@@ -657,7 +657,7 @@
                       data-platform-link="https://github.com/AprilRobotics/apriltag"
                       data-platform-visual="marker"
                       data-platform-image="assets/platforms/apriltag.png"
-                      data-platform-summary="로봇이 마커를 인식해 위치, 방향, 상대 거리를 추정하는 데 사용하는 비전 기반 fiducial 시스템입니다."
+                      data-platform-summary="로봇이 카메라로 마커를 인식해 위치, 방향, 상대 거리를 추정하는 비전 기반 fiducial 시스템입니다. ADAS 카메라 센서 검증의 기준 타겟/로그 분석 흐름과 연결됩니다."
                     >AprilTag</button>
                     <button
                       class="platform-trigger"
@@ -748,7 +748,7 @@
             <p class="eyebrow">Exhibition · Presentation</p>
             <h2 id="public-activities-title">외부 발표와 전시</h2>
             <p>
-              기업과제와 연구 성과를 외부 행사에서 설명하고, ADAS 센서 검증과 차량 안전 시스템 관점으로 확장했습니다.
+              기업과제와 연구 성과를 외부 행사에서 설명하고, ADAS, LiDAR, 초음파, 카메라 센서 검증과 차량 안전 시스템 관점으로 확장했습니다.
             </p>
           </div>
 
@@ -757,8 +757,8 @@
               <time datetime="2026">FIX 2026 예정</time>
               <h3><a href="https://www.fixkorea.or.kr" target="_blank" rel="noopener noreferrer">FIX 2026 부스 참가 예정</a></h3>
               <p>
-                ADAS 센서 검증, 차량 안전 신호, 로봇 플랫폼 기반 안전 감지 시스템 성과를 부스 형태로 소개할 예정입니다.
-                카메라·OCC·PSD·로봇 플랫폼을 시스템 검증 관점에서 보여주는 방향으로 준비하고 있습니다.
+                ADAS 카메라·LiDAR·초음파 센서 검증, 차량 안전 신호, 로봇 플랫폼 기반 안전 감지 시스템 성과를 부스 형태로 소개할 예정입니다.
+                카메라·LiDAR·초음파·OCC·PSD·로봇 플랫폼을 시스템 검증 관점에서 보여주는 방향으로 준비하고 있습니다.
               </p>
             </article>
 
@@ -767,7 +767,7 @@
               <h3><a href="https://www.difa.or.kr" target="_blank" rel="noopener noreferrer">한국자동차공학한림원 세션 차량안전시스템 발표</a></h3>
               <p>
                 DIFA 2025에서 한국자동차공학한림원 세션으로 참가해 차량안전시스템을 발표했습니다.
-                후미등 OCC, 안전 상태 판별, 로봇 플랫폼 적용 가능성을 차량 안전 시스템 검증 관점에서 설명했습니다.
+                후미등 OCC, 카메라 센서 입력, 안전 상태 판별, 로봇 플랫폼 적용 가능성을 차량 안전 시스템 검증 관점에서 설명했습니다.
               </p>
             </article>
           </div>
