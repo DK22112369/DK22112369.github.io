@@ -387,4 +387,49 @@
       if (event.key === "Escape" && !recommendModal.hidden) closeModal();
     });
   }
+
+  const videoCarousel = document.querySelector("[data-video-carousel]");
+  if (videoCarousel) {
+    const slides = [...videoCarousel.querySelectorAll("[data-video-slide]")];
+    const nextButton = videoCarousel.querySelector("[data-video-next]");
+    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+
+    const keepMuted = (video) => {
+      if (!video) return;
+      video.defaultMuted = true;
+      if (!video.hasAttribute("muted")) video.setAttribute("muted", "");
+      if (!video.muted) video.muted = true;
+      if (video.volume !== 0) video.volume = 0;
+    };
+
+    const showSlide = (nextIndex) => {
+      if (slides.length === 0) return;
+
+      const current = slides[activeIndex];
+      const shouldContinue = current && !current.paused;
+      if (current) {
+        current.pause();
+        current.classList.remove("is-active");
+      }
+
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      const next = slides[activeIndex];
+      keepMuted(next);
+      next.classList.add("is-active");
+
+      if (shouldContinue) {
+        next.play().catch(() => {});
+      }
+    };
+
+    slides.forEach((video, index) => {
+      keepMuted(video);
+      video.classList.toggle("is-active", index === activeIndex);
+      video.addEventListener("volumechange", () => keepMuted(video));
+    });
+
+    if (nextButton && slides.length > 1) {
+      nextButton.addEventListener("click", () => showSlide(activeIndex + 1));
+    }
+  }
 })();
