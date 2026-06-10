@@ -81,6 +81,10 @@ section[aria-labelledby="timeline-title"] {
   order: 5;
 }
 
+.project-videos {
+  order: 8;
+}
+
 #research {
   order: 6;
 }
