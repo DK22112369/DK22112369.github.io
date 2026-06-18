@@ -188,6 +188,7 @@
 
     const openModal = (trigger) => {
       const conference = trigger.dataset.paperConference || "학회";
+      const linkLabel = conference.replace(/^Submitted to\s+/i, "");
       lastFocused = trigger;
       selectedPaperPdf = trigger.dataset.paperPdf || "";
       selectedPaperTitle = trigger.dataset.paperTitle || "";
@@ -197,7 +198,7 @@
       modalSummary.textContent = trigger.dataset.paperSummary || "";
       modalConference.textContent = conference;
       modalLink.href = trigger.dataset.paperLink || "#";
-      modalLink.textContent = `${conference} 학회 링크 열기`;
+      modalLink.textContent = linkLabel;
       if (viewButton) {
         viewButton.hidden = !selectedPaperPdf;
       }
