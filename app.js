@@ -151,10 +151,12 @@
     const closeButton = paperModal.querySelector("[data-paper-close]");
     const viewerTitle = paperViewerModal?.querySelector("[data-paper-viewer-title]");
     const viewerFrame = paperViewerModal?.querySelector("[data-paper-frame]");
+    const viewerPreviewImage = paperViewerModal?.querySelector("[data-paper-preview-image]");
     const viewerNote = paperViewerModal?.querySelector("[data-paper-viewer-note]");
     const viewerCloseButton = paperViewerModal?.querySelector("[data-paper-viewer-close]");
     let lastFocused = null;
     let selectedPaperPdf = "";
+    let selectedPaperPreview = "";
     let selectedPaperTitle = "";
 
     const closeModal = () => {
@@ -167,6 +169,10 @@
       if (!paperViewerModal) return;
       paperViewerModal.hidden = true;
       if (viewerFrame) viewerFrame.removeAttribute("src");
+      if (viewerPreviewImage) {
+        viewerPreviewImage.hidden = true;
+        viewerPreviewImage.removeAttribute("src");
+      }
       if (!paperModal.hidden) {
         document.body.classList.add("modal-open");
         if (viewButton && !viewButton.hidden) viewButton.focus();
@@ -176,11 +182,25 @@
     };
 
     const openViewerModal = () => {
-      if (!paperViewerModal || !viewerFrame || !selectedPaperPdf) return;
-      const pdfUrl = `${selectedPaperPdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
+      if (!paperViewerModal || (!selectedPaperPreview && !selectedPaperPdf)) return;
       if (viewerTitle) viewerTitle.textContent = selectedPaperTitle || "논문 보기";
       if (viewerNote) viewerNote.textContent = "자세한 내용은 학회 홈페이지에서 확인 가능합니다.";
-      viewerFrame.src = pdfUrl;
+      if (selectedPaperPreview && viewerPreviewImage) {
+        if (viewerFrame) {
+          viewerFrame.hidden = true;
+          viewerFrame.removeAttribute("src");
+        }
+        viewerPreviewImage.src = selectedPaperPreview;
+        viewerPreviewImage.alt = selectedPaperTitle ? `${selectedPaperTitle} 첫 페이지` : "논문 첫 페이지";
+        viewerPreviewImage.hidden = false;
+      } else if (viewerFrame && selectedPaperPdf) {
+        if (viewerPreviewImage) {
+          viewerPreviewImage.hidden = true;
+          viewerPreviewImage.removeAttribute("src");
+        }
+        viewerFrame.hidden = false;
+        viewerFrame.src = `${selectedPaperPdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
+      }
       paperViewerModal.hidden = false;
       document.body.classList.add("modal-open");
       if (viewerCloseButton) viewerCloseButton.focus();
@@ -191,6 +211,7 @@
       const linkLabel = conference.replace(/^Submitted to\s+/i, "");
       lastFocused = trigger;
       selectedPaperPdf = trigger.dataset.paperPdf || "";
+      selectedPaperPreview = trigger.dataset.paperPreview || "";
       selectedPaperTitle = trigger.dataset.paperTitle || "";
 
       modalTitle.textContent = trigger.dataset.paperTitle || "";
@@ -200,7 +221,7 @@
       modalLink.href = trigger.dataset.paperLink || "#";
       modalLink.textContent = linkLabel;
       if (viewButton) {
-        viewButton.hidden = !selectedPaperPdf;
+        viewButton.hidden = !(selectedPaperPreview || selectedPaperPdf);
       }
 
       paperModal.hidden = false;
@@ -243,6 +264,7 @@
   if (paperViewerModal && certificateTriggers.length > 0) {
     const viewerTitle = paperViewerModal.querySelector("[data-paper-viewer-title]");
     const viewerFrame = paperViewerModal.querySelector("[data-paper-frame]");
+    const viewerPreviewImage = paperViewerModal.querySelector("[data-paper-preview-image]");
     const viewerNote = paperViewerModal.querySelector("[data-paper-viewer-note]");
     const viewerCloseButton = paperViewerModal.querySelector("[data-paper-viewer-close]");
     let certificateLastFocused = null;
@@ -252,6 +274,10 @@
       if (!certificateViewerOpen) return;
       paperViewerModal.hidden = true;
       if (viewerFrame) viewerFrame.removeAttribute("src");
+      if (viewerPreviewImage) {
+        viewerPreviewImage.hidden = true;
+        viewerPreviewImage.removeAttribute("src");
+      }
       document.body.classList.remove("modal-open");
       certificateViewerOpen = false;
       if (certificateLastFocused) certificateLastFocused.focus();
@@ -266,6 +292,11 @@
         if (!pdf) return;
         if (viewerTitle) viewerTitle.textContent = title;
         if (viewerNote) viewerNote.textContent = "이수증은 화면 열람용으로 표시됩니다.";
+        if (viewerPreviewImage) {
+          viewerPreviewImage.hidden = true;
+          viewerPreviewImage.removeAttribute("src");
+        }
+        viewerFrame.hidden = false;
         viewerFrame.src = `${pdf}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
         certificateViewerOpen = true;
         paperViewerModal.hidden = false;
