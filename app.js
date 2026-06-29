@@ -3,8 +3,8 @@
   const accessForm = document.querySelector("[data-access-form]");
   const accessInput = document.querySelector("[data-access-input]");
   const accessError = document.querySelector("[data-access-error]");
-  const accessStorageKey = "dk-portfolio-access-v2";
-  const accessHash = "9a811f1e6602592dfe11659a453f338c66ef2ced8bd372c296681c756486e0ef";
+  const accessStorageKey = "dk-portfolio-access-v3";
+  const accessHash = "82bd2fc46a3b9868fa5d4e33e2525fe41278bc42d29ead0513343856479220ad";
 
   const toHex = (buffer) => {
     return [...new Uint8Array(buffer)].map((value) => value.toString(16).padStart(2, "0")).join("");
